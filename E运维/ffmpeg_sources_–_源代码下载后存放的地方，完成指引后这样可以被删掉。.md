@@ -152,37 +152,37 @@ cd ffmpeg
 
 PATH="$HOME/bin:$PATH" PKG_CONFIG_PATH="$HOME/ffmpeg_build/lib/pkgconfig" ./configure \
 
-  --prefix="$HOME/ffmpeg_build" \
+  --prefix="$HOME/ffmpeg_build" \
 
-  --pkg-config-flags="--static" \
+  --pkg-config-flags="--static" \
 
-  --extra-cflags="-I$HOME/ffmpeg_build/include" \
+  --extra-cflags="-I$HOME/ffmpeg_build/include" \
 
-  --extra-ldflags="-L$HOME/ffmpeg_build/lib" \
+  --extra-ldflags="-L$HOME/ffmpeg_build/lib" \
 
-  --extra-libs=-lpthread \
+  --extra-libs=-lpthread \
 
-  --extra-libs=-lm \
+  --extra-libs=-lm \
 
-  --bindir="$HOME/bin" \
+  --bindir="$HOME/bin" \
 
-  --enable-gpl \
+  --enable-gpl \
 
-  --enable-libfdk_aac \
+  --enable-libfdk_aac \
 
-  --enable-libfreetype \
+  --enable-libfreetype \
 
-  --enable-libmp3lame \
+  --enable-libmp3lame \
 
-  --enable-libopus \
+  --enable-libopus \
 
-  --enable-libvpx \
+  --enable-libvpx \
 
-  --enable-libx264 \
+  --enable-libx264 \
 
-  --enable-libx265 \
+  --enable-libx265 \
 
-  --enable-nonfree
+  --enable-nonfree
 
 make
 

@@ -1,10 +1,10 @@
 # centos安装jdk
 
-tar -xvf xxxxxx.tar.gz  
+tar -xvf xxxxxx.tar.gz  
 
-改名为jdk后移动到  /usr/local文件夹
+改名为jdk后移动到  /usr/local文件夹
 
-然后 vim  /etc/profile 插入如下代码后保存退出
+然后 vim  /etc/profile 插入如下代码后保存退出
 
 export JAVA_HOME=/usr/local/jdk
 

@@ -2,12 +2,12 @@
 
 # [Docker启动容器报错：port is already allocated解决办法](https://www.4spaces.org/944.html)
 
-2020-05-21 分类：[博文](https://www.4spaces.org/blogs) 阅读(6177) 评论(0)
+2020-05-21 分类：[博文](https://www.4spaces.org/blogs) 阅读(6177) 评论(0)
 
 ## 环境信息
 
 - docker: 19.03.6；
-- CENTOS 7[搬瓦工](https://www.4spaces.org/bwg/static/promotion.html) ；
+- CENTOS 7[搬瓦工](https://www.4spaces.org/bwg/static/promotion.html) ；
 
 ## 错误原因
 

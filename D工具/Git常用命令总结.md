@@ -6,11 +6,11 @@
 
 1.git fetch
 
-git fetch 远程仓库名  分支名—— 将某个远程分支的commitId更新为最新，全部省略的时候代表更新所有远程仓库的所有分支
+git fetch 远程仓库名  分支名—— 将某个远程分支的commitId更新为最新，全部省略的时候代表更新所有远程仓库的所有分支
 
-    (经常用git fetch+rebase进行合并，rebase和merge区别见[http://www.jianshu.com/p/cca69cb695a6](http://www.jianshu.com/p/cca69cb695a6))
+    (经常用git fetch+rebase进行合并，rebase和merge区别见[http://www.jianshu.com/p/cca69cb695a6](http://www.jianshu.com/p/cca69cb695a6))
 
-    (merge和rebase优缺点自己百度，一般认为fetch+merge=pull)
+    (merge和rebase优缺点自己百度，一般认为fetch+merge=pull)
 
 —————————————————————————————————————————————————————————
 
@@ -36,11 +36,11 @@ git branch -d branch (大写D为强制删除)
 
 5.删除远程分支
 
-git branch -r -d origin/远程分支名 
+git branch -r -d origin/远程分支名 
 
- 或  git push origin   :远程分支名     
+ 或  git push origin   :远程分支名     
 
- 或      git push <远程主机名> --detete <删除分支名>
+ 或      git push <远程主机名> --detete <删除分支名>
 
 更新远程分支的本地列表：git remote update origin --prune
 
@@ -50,7 +50,7 @@ git merge branchName
 
 7.改本地分支名
 
-git branch -m oldname  newname
+git branch -m oldname  newname
 
 8.更改远程仓库的默认分支（默认为master）
 
@@ -62,13 +62,13 @@ git remote set-head origin 分支名
 
 git rebase -i HEAD~n ——重构本地当前分支的前n个提交（n代表数字）
 
-git rebase  目标分支——用目标分支重构当前本地分支，目标分支可以是本地也可是远程，省略时代表本地当前分支关联的远程分支
+git rebase  目标分支——用目标分支重构当前本地分支，目标分支可以是本地也可是远程，省略时代表本地当前分支关联的远程分支
 
 —————————————————————————————————————————————————————————
 
 10.单独抓取另一个分支（本地/远程）上的单个提交
 
-git cherry-pick  commitId
+git cherry-pick  commitId
 
 ——————————————————————————————————————————————————————————
 
@@ -94,10 +94,10 @@ $ git push origin 2dc2b7e393e6b712ef103eaac81050b9693395a4:master
 
 ——————————————————————————————————————————————————————
 
-14 git reflog   查看详细历史操作记录（恢复误操作的git reset常用）
+14 git reflog   查看详细历史操作记录（恢复误操作的git reset常用）
 
 15 重设远程origin的url
 
-git remote set-url   origin    [url]
+git remote set-url   origin    [url]
 
 git rm -r --cached 移除某文件夹的版本控制

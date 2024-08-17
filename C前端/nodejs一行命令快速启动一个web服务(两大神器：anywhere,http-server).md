@@ -48,6 +48,6 @@ npm install http-server -g
 
 http-server -c-1 也可启动，表示在禁止缓存情况下启用
 
-http-server -p 8080                         // 当前目前下启动 8080 端口
+http-server -p 8080                         // 当前目前下启动 8080 端口
 
-http-server -p ./src/demo/ -p 9000         // 开启目录为当前目录的下一级 src/demo 目录 端口为 9000
+http-server -p ./src/demo/ -p 9000         // 开启目录为当前目录的下一级 src/demo 目录 端口为 9000

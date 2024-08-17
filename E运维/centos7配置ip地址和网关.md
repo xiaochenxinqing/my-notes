@@ -12,7 +12,7 @@ ONBOOT="yes" 开机自动启用网卡
 
 2、静态IP地址。
 
-vim /etc/sysconfig/network-scripts/ifcfg-eth0  
+vim /etc/sysconfig/network-scripts/ifcfg-eth0  
 
 ifcfg-eth0文件中dhcp改为静态IP，需要改 BOOTPROTO=static
 
@@ -26,11 +26,11 @@ GATEWAY=192.168.2.1
 
  修改完后重启网卡
 
-    systemctl restart network
+    systemctl restart network
 
 **二,通过命令行配置(重启系统或网卡会失效)**
 
-**ifconfig ens33 192.168.3.110 netmask 255.255.255.0  设置ens3网卡的静态ip和子网掩码**
+**ifconfig ens33 192.168.3.110 netmask 255.255.255.0  设置ens3网卡的静态ip和子网掩码**
 
 **ip route add default via 192.168.1.1 设置系统默认路由**
 
@@ -54,21 +54,21 @@ ip route change default via 192.168.99.113 dev eth0 更改默认路由。此操�
 
 ##添加连接 会在 /etc/sysconfig/network-scripts中添加文件
 
-nmcli con add con-name "新的 connection 名字"  type  ethernet  ifname  "对应device 名字"  ipv4.address  IP地址/子网掩码  ipv4.gateway IP网关地址 ipv4.dns DNS地址 ipv4.method manual (将启动网卡设置 为固定IP地址)  
+nmcli con add con-name "新的 connection 名字"  type  ethernet  ifname  "对应device 名字"  ipv4.address  IP地址/子网掩码  ipv4.gateway IP网关地址 ipv4.dns DNS地址 ipv4.method manual (将启动网卡设置 为固定IP地址)  
 
-   注意: ipv4.method manual    不能省略
+   注意: ipv4.method manual    不能省略
 
 ##更新连接
 
-nmcli  con modify  [连接名称]  ipv4.address 192.188.1.103/24 ipv4.gateway 192.188.1.1 ipv4.method manual    
+nmcli  con modify  [连接名称]  ipv4.address 192.188.1.103/24 ipv4.gateway 192.188.1.1 ipv4.method manual    
 
 ##重载
 
-nmcli con reload   这时候一般就能联了
+nmcli con reload   这时候一般就能联了
 
 ##启动连接
 
-nmcli con up  连接名
+nmcli con up  连接名
 
 #开机自动连接
 
@@ -76,6 +76,6 @@ nmcli connection modify MyWiFi connection.autoconnect yes
 
 ##其他
 
-nmcli dev con 设备名   
+nmcli dev con 设备名   
 
-(注意:  nmcli con up 和 nmcli dev con 都会立即让新网络设置生效,   但  nmcli dev con会导致这个设备随机连接该设备下的某个链接,所以最好用上面的con up)
+(注意:  nmcli con up 和 nmcli dev con 都会立即让新网络设置生效,   但  nmcli dev con会导致这个设备随机连接该设备下的某个链接,所以最好用上面的con up)

@@ -6,7 +6,7 @@
 
 才让我等小白恍然大悟。解决方法有两种，一种是在配置的Mapper.xml文件中使用查询的方法添加useCache="false"。如：
 
-<selectid="findOrderListResultMap" resultMap="ordersUserMap" useCache="false">  总结：针对每次查询都需要最
+<selectid="findOrderListResultMap" resultMap="ordersUserMap" useCache="false">  总结：针对每次查询都需要最
 
 新的数据sql，要设置成useCache=false，禁用二级缓存。
 

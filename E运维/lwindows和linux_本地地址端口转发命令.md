@@ -6,7 +6,7 @@ netsh interface portproxy add v4tov4 8314 192.168.1.108 8314 127.0.0.1
 
 netsh interface portproxy show all
 
-netsh interface portproxy  reset
+netsh interface portproxy  reset
 
 linux
 

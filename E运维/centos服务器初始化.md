@@ -2,7 +2,7 @@
 
 1安装常用工具
 
-     vim  git  ntpdate
+     vim  git  ntpdate
 
 3：配置yum源
 
@@ -18,7 +18,7 @@
 
 4.关闭selinux
 
-vim /etc/selinux/config    将
+vim /etc/selinux/config    将
 
 SELINUX=enforcing
 

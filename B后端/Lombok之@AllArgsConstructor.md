@@ -6,32 +6,32 @@
 
 public class ShiroService {
 
-    private final PermissionService permissionService;
+    private final PermissionService permissionService;
 
-    private final ShiroFilterFactoryBean shiroFilterFactoryBean;
+    private final ShiroFilterFactoryBean shiroFilterFactoryBean;
 
-    private final FileUploadProperties fileUploadProperties;
+    private final FileUploadProperties fileUploadProperties;
 
 }
 
-作用: 等同于@Autowired  自动注入
+作用: 等同于@Autowired  自动注入
 
 @Service
 
 public class ShiroService {
 
-    @Autowired 
+    @Autowired 
 
-    private PermissionService permissionService;
+    private PermissionService permissionService;
 
-    @Autowired 
+    @Autowired 
 
-    private ShiroFilterFactoryBean shiroFilterFactoryBean;
+    private ShiroFilterFactoryBean shiroFilterFactoryBean;
 
-    @Autowired 
+    @Autowired 
 
-    private FileUploadProperties fileUploadProperties;
+    private FileUploadProperties fileUploadProperties;
 
 }
 
- 
+ 

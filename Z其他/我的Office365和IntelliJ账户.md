@@ -8,7 +8,7 @@ windows安装365步骤：
 
 1.先确保电脑中没有其他版本office，如果有请卸载后继续（如果是office365预览版，要先注销掉自己账号后，才能继续）
 
-2.浏览器打开 [portal.office.com](http://portal.office.com/)，
+2.浏览器打开 [portal.office.com](http://portal.office.com/)，
 
 3.跟着浏览器提示，修改密码，设置密保
 

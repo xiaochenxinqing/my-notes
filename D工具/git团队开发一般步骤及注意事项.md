@@ -26,17 +26,17 @@ master分支仅做发布稳定版本用，大家都在develop分支合作（分�
 
 1.在本地develop分支更改文件后可以直接用idea软件commit ，要加注释（idea只需add一次以后都不需要add）
 
-2.git fetch  刷新远程develop
+2.git fetch  刷新远程develop
 
-3.git rebase origin/develop  无冲突更好，有冲突的话切回idea处理完冲突（右键项目-git-resolve conflics）后， git rebase --continue
+3.git rebase origin/develop  无冲突更好，有冲突的话切回idea处理完冲突（右键项目-git-resolve conflics）后， git rebase --continue
 
 *如果想把自己的更改提交到远程：
 
 1.在本地develop分支更改文件后可以直接用idea软件commit ，要加注释（idea只需add一次以后都不需要add）
 
-2. git fetch  刷新远程develop
+2. git fetch  刷新远程develop
 
-3.git rebase origin/develop  无冲突更好，有冲突的话切回idea处理完冲突（右键项目-git-resolve conflics）后， git rebase --continue
+3.git rebase origin/develop  无冲突更好，有冲突的话切回idea处理完冲突（右键项目-git-resolve conflics）后， git rebase --continue
 
 4.git push
 
@@ -48,7 +48,7 @@ master分支仅做发布稳定版本用，大家都在develop分支合作（分�
 
 2.可以通过log命令来查看本地和远程的最新commit的信息，以确保该分支上是否有自己或别人的信息，
 
-    git log <要查看的分支名字>
+    git log <要查看的分支名字>
 
 3 commit一定要写注释，要详细写明改了什么
 
@@ -58,11 +58,11 @@ master分支仅做发布稳定版本用，大家都在develop分支合作（分�
 
 1.比如你有个bug要修改，但是一时半会改不完，而且改的过程中会影响项目开发，那就可以自己建个分支放那，
 
-  随改随切，改完了再用devlop来merge。
+  随改随切，改完了再用devlop来merge。
 
 2.小组新来个成员，但由于他对项目不熟悉，直接在develop分支开发可能会出乱子，那就让他自己新建个分支玩，
 
-   自己再摘取他有用的commit
+   自己再摘取他有用的commit
 
 3.项目分好几个版本 发给客户的版本是正式版，但是自己想加一些功能不想给客户用，那就可以自己弄个属于自己的分支
 

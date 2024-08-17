@@ -6,7 +6,7 @@
 
 @ConditionalOnClass (KafkaTemplate.class)
 
-这个注解通俗的说就是Spring工程 说只有在classpath下能找有KafkaTemplate这个类    才会构建这个bean
+这个注解通俗的说就是Spring工程 说只有在classpath下能找有KafkaTemplate这个类    才会构建这个bean
 
 @ConditionalOnProperty
 

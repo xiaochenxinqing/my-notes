@@ -4,19 +4,19 @@
 
 **#底层**
 
-反射    注解    泛型  异常throws   设计模式   动态代理    @SuppressWarnings注解  格式化  可变参数  
+反射    注解    泛型  异常throws   设计模式   动态代理    @SuppressWarnings注解  格式化  可变参数  
 
-多线程线程池(Springboot下)    容器对象(在线替换参数？)     ApplicationContext ThreadLocal  
+多线程线程池(Springboot下)    容器对象(在线替换参数？)     ApplicationContext ThreadLocal  
 
 泛型([https://blog.csdn.net/s10461/article/details/53941091](https://blog.csdn.net/s10461/article/details/53941091))
 
-反射([https://blog.csdn.net/sinat_38259539/article/details/71799078](https://blog.csdn.net/sinat_38259539/article/details/71799078)).                                                                                                          
+反射([https://blog.csdn.net/sinat_38259539/article/details/71799078](https://blog.csdn.net/sinat_38259539/article/details/71799078)).                                                                                                          
 
 Java自定义注解（[https://blog.csdn.net/bao19901210/article/details/17201173/](https://blog.csdn.net/bao19901210/article/details/17201173/)），
 
 Java8新特性：Lamda表达式,Stream API等数。类加载器
 
-jdk8  stream流的并发处理，自动帮你多线程处理任务
+jdk8  stream流的并发处理，自动帮你多线程处理任务
 
 RestfulAPI
 
@@ -24,72 +24,72 @@ webservice（太古老了）
 
 Future
 
-Io和nio     Netty(NIO的后端框架)  和 jetty(Servlet容器类似tomcat)  
+Io和nio     Netty(NIO的后端框架)  和 jetty(Servlet容器类似tomcat)  
 
 easyrules
 
-Apache Camel
+Apache Camel
 
 **#应用**
 
-缓存技术：Redis+ jedis  Memcache  Ehcache   
+缓存技术：Redis+ jedis  Memcache  Ehcache   
 
 # **缓存穿透、缓存击穿、缓存雪崩区别和解决方案**[**https://blog.csdn.net/kongtiao5/article/details/82771694**](https://blog.csdn.net/kongtiao5/article/details/82771694)
 
-Redis深入探究 redisson
+Redis深入探究 redisson
 
-    (spring 操作redis[http://www.cnblogs.com/duyinqiang/p/5696309.html](http://www.cnblogs.com/duyinqiang/p/5696309.html))
+    (spring 操作redis[http://www.cnblogs.com/duyinqiang/p/5696309.html](http://www.cnblogs.com/duyinqiang/p/5696309.html))
 ![.png](image/.png)
 
-模版引擎：freemarker  velocity   thymeleaf
+模版引擎：freemarker  velocity   thymeleaf
 
 CAS单点登录·
 
- SpringBoot.   Spingcache缓存  Spring事件 Spring定时任务   （对比quartz任务调度）  spring batch批处理  spring Beanutil
+ SpringBoot.   Spingcache缓存  Spring事件 Spring定时任务   （对比quartz任务调度）  spring batch批处理  spring Beanutil
 
-# springOauth2 （授权框架）   SpringSession    Spring ApplicationListener  Dataway 数据接口配置服务
+# springOauth2 （授权框架）   SpringSession    Spring ApplicationListener  Dataway 数据接口配置服务
 
 # WebClient
 
 sonar
 
-Springcloud微服务([https://blog.csdn.net/forezp/article/details/70148833](https://blog.csdn.net/forezp/article/details/70148833))   Quarkus框架
+Springcloud微服务([https://blog.csdn.net/forezp/article/details/70148833](https://blog.csdn.net/forezp/article/details/70148833))   Quarkus框架
 
 Springboot配置消息转换器
 
-数据库：oracle PostgreSQL MongoDB  Nosql  neo4j
+数据库：oracle PostgreSQL MongoDB  Nosql  neo4j
 
-   数据库存储过程
+   数据库存储过程
 
-   数据库同步工具 canalKettle
+   数据库同步工具 canalKettle
 
- Spring Data JPA      Spring Data REST   jooq   hibernate
+ Spring Data JPA      Spring Data REST   jooq   hibernate
 
 MQ消息队列框架，
 
-  -ActiveMQ 
+  -ActiveMQ 
 
-- RabbitMQ：采用Erlang开发，支持完善的AMQP协议 
+- RabbitMQ：采用Erlang开发，支持完善的AMQP协议 
 
--(重点) Kaffka：  [https://juejin.im/entry/5bfc9c9c6fb9a049c30aec63?utm_source=gold_browser_extension](https://juejin.im/entry/5bfc9c9c6fb9a049c30aec63?utm_source=gold_browser_extension)
+-(重点) Kaffka：  [https://juejin.im/entry/5bfc9c9c6fb9a049c30aec63?utm_source=gold_browser_extension](https://juejin.im/entry/5bfc9c9c6fb9a049c30aec63?utm_source=gold_browser_extension)
 
-- RocketMQ 
+- RocketMQ 
 
-- AvatarMQ：基于Netty的开源分布式消息队列系统。 
+- AvatarMQ：基于Netty的开源分布式消息队列系统。 
 
-  -WebLogic
+  -WebLogic
 
-jetty  
+jetty  
 
 activiti工作流（部署，启动，查询任务，显示流程图，审批。）驳回、会签、转办、中止、挂起等，
 
 Apache Shiro，spring securityMD5加密
 
-Jwt   基于token的身份验证（[https://ninghao.net/blog/2834](https://ninghao.net/blog/2834)）
+Jwt   基于token的身份验证（[https://ninghao.net/blog/2834](https://ninghao.net/blog/2834)）
 
-Druid连接池    
+Druid连接池    
 
-Dozer   ModelMapper（JavaBean映射工具库）
+Dozer   ModelMapper（JavaBean映射工具库）
 
 Dubbo分布式服务
 
@@ -97,7 +97,7 @@ lombok（[https://blog.csdn.net/Victor_Cindy1/article/details/72772841](https://
 
 网页分析：jsoup htmlparser
 
-JfreeChart(创建图片的java 工具[https://blog.csdn.net/sinat_38259539/article/details/73330803](https://blog.csdn.net/sinat_38259539/article/details/73330803)) 
+JfreeChart(创建图片的java 工具[https://blog.csdn.net/sinat_38259539/article/details/73330803](https://blog.csdn.net/sinat_38259539/article/details/73330803)) 
 
 marshaller （对象和xml转化）
 
@@ -131,7 +131,7 @@ rpc？grpc？
 
 Java的23种设计模式（单例模式，工厂模式等）
 
-java快速开发框架：jeesite.jeecg jeeplus  bootdo
+java快速开发框架：jeesite.jeecg jeeplus  bootdo
 
 javaEE高并发处理
 
@@ -139,17 +139,17 @@ tbschedule
 
 quartz任务调度
 
-Elasticsearch和Solr、lucene（全文检索）  
+Elasticsearch和Solr、lucene（全文检索）  
 
 MongoDB、ES、分库分表、读写分离、、Webflux、、WebSocket
 
-shardingsphere  ,  Mycat数据库中间件
+shardingsphere  ,  Mycat数据库中间件
 
-Jta分布式锁      TCC分布式事务方案       atomikos     
+Jta分布式锁      TCC分布式事务方案       atomikos     
 
 javafx
 
-乐观锁，悲观锁   自旋锁、阻塞锁、重入锁、偏向锁、轻量锁和重量锁
+乐观锁，悲观锁   自旋锁、阻塞锁、重入锁、偏向锁、轻量锁和重量锁
 
 线程，线程池，
 
@@ -163,35 +163,35 @@ javafx
 
 爬虫技术webmagic
 
-代码检查工具：checkstyle    jacoco
+代码检查工具：checkstyle    jacoco
 
-                                   **#######前端#######**
+                                   **#######前端#######**
 
 websocket indexedDB
 
 webpack 等模块化构建工具
 
-js高阶函数：map/reduce  Object.keys  filter  forEach  sort
+js高阶函数：map/reduce  Object.keys  filter  forEach  sort
 
 node+es6+webpack+vue+angular+condova
 
-前端框架：easyUI   bootstrap  EasyUI  ExtJS
+前端框架：easyUI   bootstrap  EasyUI  ExtJS
 
-ThingJS Threejs， htforweb  
+ThingJS Threejs， htforweb  
 
-跨平台开发：Cordova Flutter Uniapp  Electron
+跨平台开发：Cordova Flutter Uniapp  Electron
 
-                      **########运维############**
+                      **########运维############**
 
-Docker容器技术 （Swarm  k8s(Kubernetes) Mesos      knife4j      Kitematic  Portainer(docker的可视化技术)
+Docker容器技术 （Swarm  k8s(Kubernetes) Mesos      knife4j      Kitematic  Portainer(docker的可视化技术)
 
-五大DevOps工具了解：（Terraform   AnsiblePacker Docker  Kubernetes）
+五大DevOps工具了解：（Terraform   AnsiblePacker Docker  Kubernetes）
 
-ZooKeepr  分布式中一致性处理的框架
+ZooKeepr  分布式中一致性处理的框架
 
 linux’系统监控
 
-nginx反向代理  负载均衡与高可用nginx  nginx解决跨域
+nginx反向代理  负载均衡与高可用nginx  nginx解决跨域
 
 GraphicsMagick
 
@@ -201,15 +201,15 @@ JMeter (类比postman)
 
 linux shell编程 权限等
 
-Jekins  teamcity持续集成工具
+Jekins  teamcity持续集成工具
 
 supervisor
 
-数据库迁移：   kettle DataX
+数据库迁移：   kettle DataX
 
 git-hook
 
-**         ####薄弱点巩固#######**
+**         ####薄弱点巩固#######**
 
 [https://juejin.im/post/5bf4a5de6fb9a04a0f64caca](https://juejin.im/post/5bf4a5de6fb9a04a0f64caca)
 

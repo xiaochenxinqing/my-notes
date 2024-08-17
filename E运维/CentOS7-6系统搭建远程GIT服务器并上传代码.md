@@ -16,21 +16,21 @@
 
 3.禁用git用户的shell登录
 
-[root@hostname ~]$ vim  /etc/passwd
+[root@hostname ~]$ vim  /etc/passwd
 
 找到类似下面的一行：
 
-     git:x:1001:1001::/home/git:/bin/bash
+     git:x:1001:1001::/home/git:/bin/bash
 
-     改为：
+     改为：
 
-     git:x:1001:1001::/home/git:/usr/bin/git-shell
+     git:x:1001:1001::/home/git:/usr/bin/git-shell
 
 #4.设定远程登录方式（增加密钥登录）
 
-[root@hostname ~]sudo  vim /etc/ssh/sshd_config  后 改为如下配置：
+[root@hostname ~]sudo  vim /etc/ssh/sshd_config  后 改为如下配置：
 
-        PubkeyAuthentication yes   使用公钥登录
+        PubkeyAuthentication yes   使用公钥登录
 
 修改完毕后
 
@@ -50,7 +50,7 @@
 
 [root@hostname git]$ cd .ssh
 
-[root@hostname .ssh]$ vim   /home/git/.ssh/authorized_keys #添加公钥
+[root@hostname .ssh]$ vim   /home/git/.ssh/authorized_keys #添加公钥
 
 [root@hostname .ssh]$ chmod 755 authorized_keys
 
@@ -62,9 +62,9 @@
 
 [root@hostname git]$ sudo git init --bare project.git
 
-[root@hostname git]$ sudo chmod -R -v 777  project.git/
+[root@hostname git]$ sudo chmod -R -v 777  project.git/
 
-[root@hostname git]$ sudo chown -R -v git:git  project.git
+[root@hostname git]$ sudo chown -R -v git:git  project.git
 
 **二.git生成ssh密钥对**
 
@@ -82,11 +82,11 @@ $ ssh-keygen -t rsa -C "[842946343@qq.com](mailto:842946343@qq.com)"
 
 # **三.上传本地代码到git仓库**
 
-**1  git init**
+**1  git init**
 
 **2 git add -A, git commit -m**
 
-**3  git remote add origin   url(即把url认定为origin)**
+**3  git remote add origin   url(即把url认定为origin)**
 
 **4 git push -u origin master**
 
@@ -94,4 +94,4 @@ $ ssh-keygen -t rsa -C "[842946343@qq.com](mailto:842946343@qq.com)"
 
 **如果只有一个主机 则**
 
-**$ git push  origin master**
+**$ git push  origin master**

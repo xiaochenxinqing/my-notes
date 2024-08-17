@@ -2,7 +2,7 @@
 
 # jQuery $.ajax传递数组的traditional参数传递必须true
 
-2014年04月27日 11:48:38 [彭浩_JAVA](https://me.csdn.net/oJACKhao) 阅读数 20595
+2014年04月27日 11:48:38 [彭浩_JAVA](https://me.csdn.net/oJACKhao) 阅读数 20595
 
 **起初我认为traditional:true,可有可无，但是后来不用traditional的时候，发现后台无法获取selectUsers的值，那么可以肯定的是traditional默认值是false.**
 
@@ -14,7 +14,7 @@
 
 **官方文档的解释如下：**
 
-**traditional�**�
+**traditional�**�
 
 **类型：Boolean**
 

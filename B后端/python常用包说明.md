@@ -22,15 +22,15 @@ django-cors-headers==2.4.0
 
 django-redis==4.9.0
 
-djangorestframework==3.8.2  序列化
+djangorestframework==3.8.2  序列化
 
 gunicorn==19.9.0 部署
 
 idna==2.7
 
-Pillow==5.2.0  图片
+Pillow==5.2.0  图片
 
-psutil==5.4.6    
+psutil==5.4.6    
 
 pycparser==2.18
 
@@ -52,18 +52,18 @@ urllib3==1.23
 
 virtualenv==16.0.0
 
-XlsxWriter==1.0.5   表格
+XlsxWriter==1.0.5   表格
 
 xlwt==1.3.0
 
 xlrd==1.2.0
 
-pika==0.13.0  消息队列 rabbit
+pika==0.13.0  消息队列 rabbit
 
-bs4==0.0.1  解析html
+bs4==0.0.1  解析html
 
 DBUtils==1.3
 
-gevent==1.4.0   协程
+gevent==1.4.0   协程
 
 django-bulk-update==2.2.0

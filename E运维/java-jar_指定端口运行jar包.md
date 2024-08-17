@@ -28,4 +28,4 @@ nohup java -jar springboot.jar --server.port=8181 >outlog.log 2>&1 &
 
 2、加载服务器配置文件application-dev.yml
 
-nohup java -Dserver.port=8086  -Dspring.config.additional-location=./application-dev.yml -jar ./springboot.jar> nohup.out 2>&1 &
+nohup java -Dserver.port=8086  -Dspring.config.additional-location=./application-dev.yml -jar ./springboot.jar> nohup.out 2>&1 &

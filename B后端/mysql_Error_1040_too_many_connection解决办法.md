@@ -26,10 +26,10 @@ mysql> show global variables like 'wait_timeout';
 
 +----------------------------+-------+
 
-| Variable_name              | Value |
+| Variable_name              | Value |
 
 +----------------------------+-------+
 
-| wait_timeout               | 10    |
+| wait_timeout               | 10    |
 
 +----------------------------+-------+

@@ -8,9 +8,9 @@ _2024-02-03 18:10_
 
 _发表于上海_
 
-👉 **这是一个或许对你有用的社群**
+👉 **这是一个或许对你有用的社群**
 
-🐱 一对一交流/面试小册/简历优化/求职解惑，欢迎加入「[**芋道快速开发平台**](http://mp.weixin.qq.com/s?__biz=MzUzMTA2NTU2Ng==&mid=2247576697&idx=1&sn=a5f8a37fe0c6f05509c5bed6244471a8&chksm=fa4bd3c8cd3c5aded28a6b68a9944ce671f3d2748644f71550c0468d75058e90dd378a1babe8&scene=21#wechat_redirect)」知识星球。下面是星球提供的部分资料： 
+🐱 一对一交流/面试小册/简历优化/求职解惑，欢迎加入「[**芋道快速开发平台**](http://mp.weixin.qq.com/s?__biz=MzUzMTA2NTU2Ng==&mid=2247576697&idx=1&sn=a5f8a37fe0c6f05509c5bed6244471a8&chksm=fa4bd3c8cd3c5aded28a6b68a9944ce671f3d2748644f71550c0468d75058e90dd378a1babe8&scene=21#wechat_redirect)」知识星球。下面是星球提供的部分资料： 
 
 - [《项目实战（视频）》](http://mp.weixin.qq.com/s?__biz=MzUxOTc4NjEyMw==&mid=2247561735&idx=1&sn=1b0a95d87fc647c3cf5e2b88576a8f55&chksm=f9f7e9e3ce8060f5809daa189fea465e95fa5445797f96fd8023f424c2acf4d31751a62792fc&scene=21#wechat_redirect)：从书中学，往事中**“练****”**
 - [《互联网高频面试题》](http://mp.weixin.qq.com/s?__biz=MzUxOTc4NjEyMw==&mid=2247561735&idx=1&sn=1b0a95d87fc647c3cf5e2b88576a8f55&chksm=f9f7e9e3ce8060f5809daa189fea465e95fa5445797f96fd8023f424c2acf4d31751a62792fc&scene=21#wechat_redirect)：面朝简历学习，春暖花开
@@ -30,7 +30,7 @@ _发表于上海_
 - Cloud 仓库：https://gitee.com/zhijiantianya/yudao-cloud
 - 视频教程：https://doc.iocoder.cn
 
-【国内首批】支持 JDK 21 + SpringBoot 3.2.2、JDK 8 + Spring Boot 2.7.18 双版本 
+【国内首批】支持 JDK 21 + SpringBoot 3.2.2、JDK 8 + Spring Boot 2.7.18 双版本 
 
 [来源：juejin.im/post/](https://mp.weixin.qq.com/s?__biz=MzUzMTA2NTU2Ng==&mid=2247487551&idx=1&sn=18f64ba49f3f0f9d8be9d1fdef8857d9&scene=21#wechat_redirect)[6856541106626363399](https://mp.weixin.qq.com/s?__biz=MzUzMTA2NTU2Ng==&mid=2247487551&idx=1&sn=18f64ba49f3f0f9d8be9d1fdef8857d9&scene=21#wechat_redirect)
 
@@ -86,11 +86,11 @@ DTO表示数据传输对象（Data Transfer Object），用于服务器和客户
 
 在DTO字段上声明约束注解
 
-@DatapublicclassUserDTO{      private Long userId;      @NotNull@Length(min = 2, max = 10)    private String userName;      @NotNull@Length(min = 6, max = 20)    private String account;      @NotNull@Length(min = 6, max = 20)    private String password; } 
+@DatapublicclassUserDTO{      private Long userId;      @NotNull@Length(min = 2, max = 10)    private String userName;      @NotNull@Length(min = 6, max = 20)    private String account;      @NotNull@Length(min = 6, max = 20)    private String password; } 
 
 在方法参数上声明校验注解
 
-@PostMapping("/save") public Result saveUser(@RequestBody @Validated UserDTO userDTO){    _// 校验通过，才会执行业务逻辑处理_return Result.ok(); } 
+@PostMapping("/save") public Result saveUser(@RequestBody @Validated UserDTO userDTO){    _// 校验通过，才会执行业务逻辑处理_return Result.ok(); } 
 
 这种情况下，使用@Valid和@Validated都可以。
 
@@ -102,7 +102,7 @@ GET请求一般会使用requestParam/PathVariable传参。如果参数比较多(
 
 代码示例如下：
 
-@RequestMapping("/api/user") @RestController@ValidatedpublicclassUserController{    _// 路径变量_@GetMapping("{userId}")    public Result detail(@PathVariable("userId") @Min(10000000000000000L) Long userId) {        _// 校验通过，才会执行业务逻辑处理_        UserDTO userDTO = new UserDTO();        userDTO.setUserId(userId);        userDTO.setAccount("11111111111111111");        userDTO.setUserName("xixi");        userDTO.setAccount("11111111111111111");        return Result.ok(userDTO);    }      _// 查询参数_@GetMapping("getByAccount")    public Result getByAccount(@Length(min = 6, max = 20) @NotNull String  account) {        _// 校验通过，才会执行业务逻辑处理_        UserDTO userDTO = new UserDTO();        userDTO.setUserId(10000000000000003L);        userDTO.setAccount(account);        userDTO.setUserName("xixi");        userDTO.setAccount("11111111111111111");        return Result.ok(userDTO);    } } 
+@RequestMapping("/api/user") @RestController@ValidatedpublicclassUserController{    _// 路径变量_@GetMapping("{userId}")    public Result detail(@PathVariable("userId") @Min(10000000000000000L) Long userId) {        _// 校验通过，才会执行业务逻辑处理_        UserDTO userDTO = new UserDTO();        userDTO.setUserId(userId);        userDTO.setAccount("11111111111111111");        userDTO.setUserName("xixi");        userDTO.setAccount("11111111111111111");        return Result.ok(userDTO);    }      _// 查询参数_@GetMapping("getByAccount")    public Result getByAccount(@Length(min = 6, max = 20) @NotNull String  account) {        _// 校验通过，才会执行业务逻辑处理_        UserDTO userDTO = new UserDTO();        userDTO.setUserId(10000000000000003L);        userDTO.setAccount(account);        userDTO.setUserName("xixi");        userDTO.setAccount("11111111111111111");        return Result.ok(userDTO);    } } 
 
 ### [统一异常处理](https://mp.weixin.qq.com/s?__biz=MzUzMTA2NTU2Ng==&mid=2247487551&idx=1&sn=18f64ba49f3f0f9d8be9d1fdef8857d9&scene=21#wechat_redirect)
 
@@ -110,7 +110,7 @@ GET请求一般会使用requestParam/PathVariable传参。如果参数比较多(
 
 比如我们系统要求无论发送什么异常，http的状态码必须返回200，由业务码去区分系统的异常情况。
 
-@RestControllerAdvicepublicclassCommonExceptionHandler{      @ExceptionHandler({MethodArgumentNotValidException.class})    @ResponseStatus(HttpStatus.OK)    @ResponseBodypublicResulthandleMethodArgumentNotValidException(MethodArgumentNotValidExceptionex) {        BindingResult bindingResult = ex.getBindingResult();        StringBuilder sb = new StringBuilder("校验失败:");        for (FieldError fieldError : bindingResult.getFieldErrors()) {            sb.append(fieldError.getField()).append("：").append(fieldError.getDefaultMessage()).append(", ");        }        String msg = sb.toString();        return Result.fail(BusinessCode.参数校验失败, msg);    }      @ExceptionHandler({ConstraintViolationException.class})    @ResponseStatus(HttpStatus.OK)    @ResponseBodypublicResulthandleConstraintViolationException(ConstraintViolationExceptionex) {        return Result.fail(BusinessCode.参数校验失败, ex.getMessage());    } } 
+@RestControllerAdvicepublicclassCommonExceptionHandler{      @ExceptionHandler({MethodArgumentNotValidException.class})    @ResponseStatus(HttpStatus.OK)    @ResponseBodypublicResulthandleMethodArgumentNotValidException(MethodArgumentNotValidExceptionex) {        BindingResult bindingResult = ex.getBindingResult();        StringBuilder sb = new StringBuilder("校验失败:");        for (FieldError fieldError : bindingResult.getFieldErrors()) {            sb.append(fieldError.getField()).append("：").append(fieldError.getDefaultMessage()).append(", ");        }        String msg = sb.toString();        return Result.fail(BusinessCode.参数校验失败, msg);    }      @ExceptionHandler({ConstraintViolationException.class})    @ResponseStatus(HttpStatus.OK)    @ResponseBodypublicResulthandleConstraintViolationException(ConstraintViolationExceptionex) {        return Result.fail(BusinessCode.参数校验失败, ex.getMessage());    } } 
 
 基于 Spring Boot + MyBatis Plus + Vue & Element 实现的后台管理系统 + 用户小程序，支持 RBAC 动态权限、多租户、数据权限、工作流、三方登录、支付、短信、商城等功能
 
@@ -127,11 +127,11 @@ GET请求一般会使用requestParam/PathVariable传参。如果参数比较多(
 
 约束注解上声明适用的分组信息groups
 
-@DatapublicclassUserDTO{      @Min(value = 10000000000000000L, groups = Update.class)    privateLonguserId;      @NotNull(groups = {Save.class, Update.class})    @Length(min= 2, max = 10, groups = {Save.class, Update.class})    privateStringuserName;      @NotNull(groups = {Save.class, Update.class})    @Length(min= 6, max = 20, groups = {Save.class, Update.class})    privateStringaccount;      @NotNull(groups = {Save.class, Update.class})    @Length(min= 6, max = 20, groups = {Save.class, Update.class})    privateStringpassword;      _/**      * 保存的时候校验分组      */_publicinterfaceSave{    }      _/**      * 更新的时候校验分组      */_publicinterfaceUpdate{    } } 
+@DatapublicclassUserDTO{      @Min(value = 10000000000000000L, groups = Update.class)    privateLonguserId;      @NotNull(groups = {Save.class, Update.class})    @Length(min= 2, max = 10, groups = {Save.class, Update.class})    privateStringuserName;      @NotNull(groups = {Save.class, Update.class})    @Length(min= 6, max = 20, groups = {Save.class, Update.class})    privateStringaccount;      @NotNull(groups = {Save.class, Update.class})    @Length(min= 6, max = 20, groups = {Save.class, Update.class})    privateStringpassword;      _/**      * 保存的时候校验分组      */_publicinterfaceSave{    }      _/**      * 更新的时候校验分组      */_publicinterfaceUpdate{    } } 
 
 @Validated注解上指定校验分组
 
-@PostMapping("/save") public Result saveUser(@RequestBody @Validated(UserDTO.Save.class) UserDTO userDTO) {    _// 校验通过，才会执行业务逻辑处理_return Result.ok(); }  @PostMapping("/update") public Result updateUser(@RequestBody @Validated(UserDTO.Update.class) UserDTO userDTO) {    _// 校验通过，才会执行业务逻辑处理_return Result.ok(); } 
+@PostMapping("/save") public Result saveUser(@RequestBody @Validated(UserDTO.Save.class) UserDTO userDTO) {    _// 校验通过，才会执行业务逻辑处理_return Result.ok(); }  @PostMapping("/update") public Result updateUser(@RequestBody @Validated(UserDTO.Update.class) UserDTO userDTO) {    _// 校验通过，才会执行业务逻辑处理_return Result.ok(); } 
 
 ### [嵌套校验](https://mp.weixin.qq.com/s?__biz=MzUzMTA2NTU2Ng==&mid=2247487551&idx=1&sn=18f64ba49f3f0f9d8be9d1fdef8857d9&scene=21#wechat_redirect)
 
@@ -139,7 +139,7 @@ GET请求一般会使用requestParam/PathVariable传参。如果参数比较多(
 
 比如，上面保存User信息的时候同时还带有Job信息。需要注意的是，此时DTO类的对应字段必须标记@Valid注解。
 
-@DatapublicclassUserDTO{      @Min(value = 10000000000000000L, groups = Update.class)    privateLonguserId;      @NotNull(groups = {Save.class, Update.class})    @Length(min= 2, max = 10, groups = {Save.class, Update.class})    privateStringuserName;      @NotNull(groups = {Save.class, Update.class})    @Length(min= 6, max = 20, groups = {Save.class, Update.class})    privateStringaccount;      @NotNull(groups = {Save.class, Update.class})    @Length(min= 6, max = 20, groups = {Save.class, Update.class})    privateStringpassword;      @NotNull(groups = {Save.class, Update.class})    @ValidprivateJobjob;      @DatapublicstaticclassJob{          @Min(value = 1, groups = Update.class)        privateLongjobId;          @NotNull(groups = {Save.class, Update.class})        @Length(min= 2, max = 10, groups = {Save.class, Update.class})        privateStringjobName;          @NotNull(groups = {Save.class, Update.class})        @Length(min= 2, max = 10, groups = {Save.class, Update.class})        privateStringposition;    }      _/**      * 保存的时候校验分组      */_publicinterfaceSave{    }      _/**      * 更新的时候校验分组      */_publicinterfaceUpdate{    } } 
+@DatapublicclassUserDTO{      @Min(value = 10000000000000000L, groups = Update.class)    privateLonguserId;      @NotNull(groups = {Save.class, Update.class})    @Length(min= 2, max = 10, groups = {Save.class, Update.class})    privateStringuserName;      @NotNull(groups = {Save.class, Update.class})    @Length(min= 6, max = 20, groups = {Save.class, Update.class})    privateStringaccount;      @NotNull(groups = {Save.class, Update.class})    @Length(min= 6, max = 20, groups = {Save.class, Update.class})    privateStringpassword;      @NotNull(groups = {Save.class, Update.class})    @ValidprivateJobjob;      @DatapublicstaticclassJob{          @Min(value = 1, groups = Update.class)        privateLongjobId;          @NotNull(groups = {Save.class, Update.class})        @Length(min= 2, max = 10, groups = {Save.class, Update.class})        privateStringjobName;          @NotNull(groups = {Save.class, Update.class})        @Length(min= 2, max = 10, groups = {Save.class, Update.class})        privateStringposition;    }      _/**      * 保存的时候校验分组      */_publicinterfaceSave{    }      _/**      * 更新的时候校验分组      */_publicinterfaceUpdate{    } } 
 
 嵌套校验可以结合分组校验一起使用。还有就是嵌套集合校验会对集合里面的每一项都进行校验，例如List<Job>字段会对这个list里面的每一个Job对象都进行校验
 
@@ -149,13 +149,13 @@ GET请求一般会使用requestParam/PathVariable传参。如果参数比较多(
 
 包装List类型，并声明@Valid注解
 
-publicclassValidationList<E> implementsList<E> {      @Delegate_// @Delegate是lombok注解_@Valid_// 一定要加@Valid注解_public List<E> list = new ArrayList<>();      _// 一定要记得重写toString方法_@Overridepublic String toString(){        return list.toString();    } } 
+publicclassValidationList<E> implementsList<E> {      @Delegate_// @Delegate是lombok注解_@Valid_// 一定要加@Valid注解_public List<E> list = new ArrayList<>();      _// 一定要记得重写toString方法_@Overridepublic String toString(){        return list.toString();    } } 
 
 @Delegate注解受lombok版本限制，1.18.6以上版本可支持。如果校验不通过，会抛出NotReadablePropertyException，同样可以使用统一异常进行处理。
 
 比如，我们需要一次性保存多个User对象，Controller层的方法可以这么写：
 
-@PostMapping("/saveList") public Result saveList(@RequestBody @Validated(UserDTO.Save.class) ValidationList<UserDTO> userList) {    _// 校验通过，才会执行业务逻辑处理_return Result.ok(); } 
+@PostMapping("/saveList") public Result saveList(@RequestBody @Validated(UserDTO.Save.class) ValidationList<UserDTO> userList) {    _// 校验通过，才会执行业务逻辑处理_return Result.ok(); } 
 
 ### [自定义校验](https://mp.weixin.qq.com/s?__biz=MzUzMTA2NTU2Ng==&mid=2247487551&idx=1&sn=18f64ba49f3f0f9d8be9d1fdef8857d9&scene=21#wechat_redirect)
 
@@ -165,11 +165,11 @@ publicclassValidationList<E> implementsList<E> {      @Delegate_// @Delegate�
 
 自定义约束注解
 
-@Target({METHOD, FIELD, ANNOTATION_TYPE, CONSTRUCTOR, PARAMETER}) @Retention(RUNTIME) @Documented@Constraint(validatedBy = {EncryptIdValidator.class}) public @interfaceEncryptId{      _// 默认错误消息_String message()default "加密id格式错误";      _// 分组_    Class<?>[] groups() default {};      _// 负载_    Class<? extends Payload>[] payload() default {}; } 
+@Target({METHOD, FIELD, ANNOTATION_TYPE, CONSTRUCTOR, PARAMETER}) @Retention(RUNTIME) @Documented@Constraint(validatedBy = {EncryptIdValidator.class}) public @interfaceEncryptId{      _// 默认错误消息_String message()default "加密id格式错误";      _// 分组_    Class<?>[] groups() default {};      _// 负载_    Class<? extends Payload>[] payload() default {}; } 
 
 实现ConstraintValidator接口编写约束校验器
 
-publicclassEncryptIdValidatorimplementsConstraintValidator<EncryptId, String> {      privatestaticfinal Pattern PATTERN = Pattern.compile("^[a-f\\d]{32,256}$");      @OverridepublicbooleanisValid(String value, ConstraintValidatorContext context){        _// 不为null才进行校验_if (value != null) {            Matcher matcher = PATTERN.matcher(value);            return matcher.find();        }        returntrue;    } } 
+publicclassEncryptIdValidatorimplementsConstraintValidator<EncryptId, String> {      privatestaticfinal Pattern PATTERN = Pattern.compile("^[a-f\\d]{32,256}$");      @OverridepublicbooleanisValid(String value, ConstraintValidatorContext context){        _// 不为null才进行校验_if (value != null) {            Matcher matcher = PATTERN.matcher(value);            return matcher.find();        }        returntrue;    } } 
 
 这样我们就可以使用@EncryptId进行参数校验了！
 
@@ -177,13 +177,13 @@ publicclassEncryptIdValidatorimplementsConstraintValidator<EncryptId, String> {�
 
 上面的示例都是基于注解来实现自动校验的，在某些情况下，我们可能希望以编程方式调用验证。这个时候可以注入javax.validation.Validator对象，然后再调用其api。
 
-@Autowiredprivate javax.validation.Validator globalValidator;  _// 编程式校验_@PostMapping("/saveWithCodingValidate") public Result saveWithCodingValidate(@RequestBody UserDTO userDTO){    Set<ConstraintViolation<UserDTO>> validate = globalValidator.validate(userDTO, UserDTO.Save.class);    _// 如果校验通过，validate为空；否则，validate包含未校验通过项_if (validate.isEmpty()) {        _// 校验通过，才会执行业务逻辑处理_    } else {        for (ConstraintViolation<UserDTO> userDTOConstraintViolation : validate) {            _// 校验失败，做其它逻辑_            System.out.println(userDTOConstraintViolation);        }    }    return Result.ok(); } 
+@Autowiredprivate javax.validation.Validator globalValidator;  _// 编程式校验_@PostMapping("/saveWithCodingValidate") public Result saveWithCodingValidate(@RequestBody UserDTO userDTO){    Set<ConstraintViolation<UserDTO>> validate = globalValidator.validate(userDTO, UserDTO.Save.class);    _// 如果校验通过，validate为空；否则，validate包含未校验通过项_if (validate.isEmpty()) {        _// 校验通过，才会执行业务逻辑处理_    } else {        for (ConstraintViolation<UserDTO> userDTOConstraintViolation : validate) {            _// 校验失败，做其它逻辑_            System.out.println(userDTOConstraintViolation);        }    }    return Result.ok(); } 
 
 ### [快速失败(Fail Fast)](https://mp.weixin.qq.com/s?__biz=MzUzMTA2NTU2Ng==&mid=2247487551&idx=1&sn=18f64ba49f3f0f9d8be9d1fdef8857d9&scene=21#wechat_redirect)
 
 Spring Validation默认会校验完所有字段，然后才抛出异常。可以通过一些简单的配置，开启Fali Fast模式，一旦校验失败就立即返回。
 
-@Beanpublic Validator validator(){    ValidatorFactory validatorFactory = Validation.byProvider(HibernateValidator.class)            .configure()            // 快速失败模式            .failFast(true)            .buildValidatorFactory();    return validatorFactory.getValidator(); } 
+@Beanpublic Validator validator(){    ValidatorFactory validatorFactory = Validation.byProvider(HibernateValidator.class)            .configure()            // 快速失败模式            .failFast(true)            .buildValidatorFactory();    return validatorFactory.getValidator(); } 
 
 ### [@Valid和@Validated区别](https://mp.weixin.qq.com/s?__biz=MzUzMTA2NTU2Ng==&mid=2247487551&idx=1&sn=18f64ba49f3f0f9d8be9d1fdef8857d9&scene=21#wechat_redirect)
 
@@ -202,15 +202,15 @@ Spring Validation默认会校验完所有字段，然后才抛出异常。可以
 
 在spring-mvc中，RequestResponseBodyMethodProcessor是用于解析@RequestBody标注的参数以及处理@ResponseBody标注方法的返回值的。显然，执行参数校验的逻辑肯定就在解析参数的方法resolveArgument()中：
 
-publicclassRequestResponseBodyMethodProcessorextendsAbstractMessageConverterMethodProcessor{    @Overridepublic Object resolveArgument(MethodParameter parameter, @Nullable ModelAndViewContainer mavContainer,                                  NativeWebRequest webRequest, @Nullable WebDataBinderFactory binderFactory)throws Exception {          parameter = parameter.nestedIfOptional();        _//将请求数据封装到DTO对象中_        Object arg = readWithMessageConverters(webRequest, parameter, parameter.getNestedGenericParameterType());        String name = Conventions.getVariableNameForParameter(parameter);          if (binderFactory != null) {            WebDataBinder binder = binderFactory.createBinder(webRequest, arg, name);            if (arg != null) {                _// 执行数据校验_                validateIfApplicable(binder, parameter);                if (binder.getBindingResult().hasErrors() && isBindExceptionRequired(binder, parameter)) {                    thrownew MethodArgumentNotValidException(parameter, binder.getBindingResult());                }            }            if (mavContainer != null) {                mavContainer.addAttribute(BindingResult.MODEL_KEY_PREFIX + name, binder.getBindingResult());            }        }        return adaptArgumentIfNecessary(arg, parameter);    } } 
+publicclassRequestResponseBodyMethodProcessorextendsAbstractMessageConverterMethodProcessor{    @Overridepublic Object resolveArgument(MethodParameter parameter, @Nullable ModelAndViewContainer mavContainer,                                  NativeWebRequest webRequest, @Nullable WebDataBinderFactory binderFactory)throws Exception {          parameter = parameter.nestedIfOptional();        _//将请求数据封装到DTO对象中_        Object arg = readWithMessageConverters(webRequest, parameter, parameter.getNestedGenericParameterType());        String name = Conventions.getVariableNameForParameter(parameter);          if (binderFactory != null) {            WebDataBinder binder = binderFactory.createBinder(webRequest, arg, name);            if (arg != null) {                _// 执行数据校验_                validateIfApplicable(binder, parameter);                if (binder.getBindingResult().hasErrors() && isBindExceptionRequired(binder, parameter)) {                    thrownew MethodArgumentNotValidException(parameter, binder.getBindingResult());                }            }            if (mavContainer != null) {                mavContainer.addAttribute(BindingResult.MODEL_KEY_PREFIX + name, binder.getBindingResult());            }        }        return adaptArgumentIfNecessary(arg, parameter);    } } 
 
 可以看到，resolveArgument()调用了validateIfApplicable()进行参数校验。
 
-protectedvoidvalidateIfApplicable(WebDataBinder binder, MethodParameter parameter){    _// 获取参数注解，比如@RequestBody、@Valid、@Validated_    Annotation[] annotations = parameter.getParameterAnnotations();    for (Annotation ann : annotations) {        _// 先尝试获取@Validated注解_        Validated validatedAnn = AnnotationUtils.getAnnotation(ann, Validated.class);        _//如果直接标注了@Validated，那么直接开启校验。//如果没有，那么判断参数前是否有Valid起头的注解。_if (validatedAnn != null || ann.annotationType().getSimpleName().startsWith("Valid")) {            Object hints = (validatedAnn != null ? validatedAnn.value() : AnnotationUtils.getValue(ann));            Object[] validationHints = (hints instanceof Object[] ? (Object[]) hints : new Object[] {hints});            _//执行校验_            binder.validate(validationHints);            break;        }    } } 
+protectedvoidvalidateIfApplicable(WebDataBinder binder, MethodParameter parameter){    _// 获取参数注解，比如@RequestBody、@Valid、@Validated_    Annotation[] annotations = parameter.getParameterAnnotations();    for (Annotation ann : annotations) {        _// 先尝试获取@Validated注解_        Validated validatedAnn = AnnotationUtils.getAnnotation(ann, Validated.class);        _//如果直接标注了@Validated，那么直接开启校验。//如果没有，那么判断参数前是否有Valid起头的注解。_if (validatedAnn != null || ann.annotationType().getSimpleName().startsWith("Valid")) {            Object hints = (validatedAnn != null ? validatedAnn.value() : AnnotationUtils.getValue(ann));            Object[] validationHints = (hints instanceof Object[] ? (Object[]) hints : new Object[] {hints});            _//执行校验_            binder.validate(validationHints);            break;        }    } } 
 
 看到这里，大家应该能明白为什么这种场景下@Validated、@Valid两个注解可以混用。我们接下来继续看WebDataBinder.validate()实现。
 
-@Overridepublicvoidvalidate(Object target, Errors errors, Object... validationHints){    if (this.targetValidator != null) {        processConstraintViolations(            _//此处调用Hibernate Validator执行真正的校验_this.targetValidator.validate(target, asValidationGroups(validationHints)), errors);    } } 
+@Overridepublicvoidvalidate(Object target, Errors errors, Object... validationHints){    if (this.targetValidator != null) {        processConstraintViolations(            _//此处调用Hibernate Validator执行真正的校验_this.targetValidator.validate(target, asValidationGroups(validationHints)), errors);    } } 
 
 最终发现底层最终还是调用了Hibernate Validator进行真正的校验处理。
 
@@ -220,10 +220,10 @@ protectedvoidvalidateIfApplicable(WebDataBinder binder, MethodParameter paramete
 
 实际上，这种方式可用于任何Spring Bean的方法上，比如Controller/Service等。其底层实现原理就是AOP，具体来说是通过MethodValidationPostProcessor动态注册AOP切面，然后使用MethodValidationInterceptor对切点方法织入增强。
 
-publicclassMethodValidationPostProcessorextendsAbstractBeanFactoryAwareAdvisingPostProcessorimplementsInitializingBean{    @OverridepublicvoidafterPropertiesSet(){        _//为所有`@Validated`标注的Bean创建切面_        Pointcut pointcut = new AnnotationMatchingPointcut(this.validatedAnnotationType, true);        _//创建Advisor进行增强_this.advisor = new DefaultPointcutAdvisor(pointcut, createMethodValidationAdvice(this.validator));    }      _//创建Advice，本质就是一个方法拦截器_protected Advice createMethodValidationAdvice(@Nullable Validator validator){        return (validator != null ? new MethodValidationInterceptor(validator) : new MethodValidationInterceptor());    } } 
+publicclassMethodValidationPostProcessorextendsAbstractBeanFactoryAwareAdvisingPostProcessorimplementsInitializingBean{    @OverridepublicvoidafterPropertiesSet(){        _//为所有`@Validated`标注的Bean创建切面_        Pointcut pointcut = new AnnotationMatchingPointcut(this.validatedAnnotationType, true);        _//创建Advisor进行增强_this.advisor = new DefaultPointcutAdvisor(pointcut, createMethodValidationAdvice(this.validator));    }      _//创建Advice，本质就是一个方法拦截器_protected Advice createMethodValidationAdvice(@Nullable Validator validator){        return (validator != null ? new MethodValidationInterceptor(validator) : new MethodValidationInterceptor());    } } 
 
 接着看一下MethodValidationInterceptor：
 
-publicclassMethodValidationInterceptorimplementsMethodInterceptor{    @Overridepublic Object invoke(MethodInvocation invocation)throws Throwable {        _//无需增强的方法，直接跳过_if (isFactoryBeanMetadataMethod(invocation.getMethod())) {            return invocation.proceed();        }        _//获取分组信息_        Class<?>[] groups = determineValidationGroups(invocation);        ExecutableValidator execVal = this.validator.forExecutables();        Method methodToValidate = invocation.getMethod();        Set<ConstraintViolation<Object>> result;        try {            _//方法入参校验，最终还是委托给Hibernate Validator来校验_            result = execVal.validateParameters(                invocation.getThis(), methodToValidate, invocation.getArguments(), groups);        }        catch (IllegalArgumentException ex) {            ...        }        _//有异常直接抛出_if (!result.isEmpty()) {            thrownew ConstraintViolationException(result);        }        _//真正的方法调用_        Object returnValue = invocation.proceed();        _//对返回值做校验，最终还是委托给Hibernate Validator来校验_        result = execVal.validateReturnValue(invocation.getThis(), methodToValidate, returnValue, groups);        _//有异常直接抛出_if (!result.isEmpty()) {            thrownew ConstraintViolationException(result);        }        return returnValue;    } } 
+publicclassMethodValidationInterceptorimplementsMethodInterceptor{    @Overridepublic Object invoke(MethodInvocation invocation)throws Throwable {        _//无需增强的方法，直接跳过_if (isFactoryBeanMetadataMethod(invocation.getMethod())) {            return invocation.proceed();        }        _//获取分组信息_        Class<?>[] groups = determineValidationGroups(invocation);        ExecutableValidator execVal = this.validator.forExecutables();        Method methodToValidate = invocation.getMethod();        Set<ConstraintViolation<Object>> result;        try {            _//方法入参校验，最终还是委托给Hibernate Validator来校验_            result = execVal.validateParameters(                invocation.getThis(), methodToValidate, invocation.getArguments(), groups);        }        catch (IllegalArgumentException ex) {            ...        }        _//有异常直接抛出_if (!result.isEmpty()) {            thrownew ConstraintViolationException(result);        }        _//真正的方法调用_        Object returnValue = invocation.proceed();        _//对返回值做校验，最终还是委托给Hibernate Validator来校验_        result = execVal.validateReturnValue(invocation.getThis(), methodToValidate, returnValue, groups);        _//有异常直接抛出_if (!result.isEmpty()) {            thrownew ConstraintViolationException(result);        }        return returnValue;    } } 
 
 实际上，不管是requestBody参数校验还是方法级别的校验，最终都是调用Hibernate Validator执行校验，Spring Validation只是做了一层封装。

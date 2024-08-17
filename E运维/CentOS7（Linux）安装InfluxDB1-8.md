@@ -12,19 +12,19 @@ yum -y localinstall influxdb-1.8.0.x86_64.rpm
 
  （3）查看influxdb的版本，看是否安装成功
 
-influx -version   //查看influxdb的版本
+influx -version   //查看influxdb的版本
 
  （4）启动influxdb，并设置开机自启
 
-systemctl start influxdb   //开启influxdb
+systemctl start influxdb   //开启influxdb
 
-systemctl enable influxdb  //开机自启
+systemctl enable influxdb  //开机自启
 
 （5）进入influxdb，并设置数据库的密码
 
-influx   //直接在控制台输入命令即可进入数据库
+influx   //直接在控制台输入命令即可进入数据库
 
-create user admin with password 'root' with all privileges;   //root为我设置的密码，账号为admin
+create user admin with password 'root' with all privileges;   //root为我设置的密码，账号为admin
 
 （6）influxdb默认使用了8088和8086两个端口，没有关闭防火墙的就需要开放端口。
 

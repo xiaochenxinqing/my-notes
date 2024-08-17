@@ -42,7 +42,7 @@ GUID : 9CA7F155-A655-7233-02FE-6406A133313D
 
 对Idea的Jrebel插件设置生效时间（Time Saved Statistics）通过鼠标勾选1分钟
 
-通过偏好设置找到构建、执行、部署=>编译器 勾选自动构建项目[Build project automatically]
+通过偏好设置找到构建、执行、部署=>编译器 勾选自动构建项目[Build project automatically]
 
 ### **方案二**
 

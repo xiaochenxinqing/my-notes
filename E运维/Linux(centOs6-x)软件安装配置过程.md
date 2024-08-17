@@ -6,7 +6,7 @@ Linux(centOs6.x)软件安装配置过程
 
 tar -xvf xxxxxx.tar.gz -C 安装文件夹
 
-安装完成后 vim  /etc/profile 插入如下代码后保存退出
+安装完成后 vim  /etc/profile 插入如下代码后保存退出
 
 export JAVA_HOME=/usr/local/jdk1.8.0_161
 
@@ -38,31 +38,31 @@ service iptables restart
 
 3增加权限后启动
 
-[root@localhost bin]# chmod u+x *.sh  
+[root@localhost bin]# chmod u+x *.sh  
 
 [root@localhost bin]# ./startup.sh
 
 tips:
 
-         1每次修改完servlet，不用重启tomcat的方法：
+         1每次修改完servlet，不用重启tomcat的方法：
 
-          在tomcat中打开conf文件，找到context.xml文件，打开文件，找到<Context>标签，
+          在tomcat中打开conf文件，找到context.xml文件，打开文件，找到<Context>标签，
 
-      将标签修改为<Context reloadable="true">然后重启tomcat
+      将标签修改为<Context reloadable="true">然后重启tomcat
 
-        2永久解决get方法提交乱码：找到tomcat/conf/server.xml 在connecter标签中添加
+        2永久解决get方法提交乱码：找到tomcat/conf/server.xml 在connecter标签中添加
 
-      <connecter.............. URIEncoding="UTF-8">然后重启tomcat
+      <connecter.............. URIEncoding="UTF-8">然后重启tomcat
 
-    jvm配置：将D:\Program File\tomcat8\bin中的service.bat文件的JvmMs值改为256，JvmMx的值改为512；
+    jvm配置：将D:\Program File\tomcat8\bin中的service.bat文件的JvmMs值改为256，JvmMx的值改为512；
 
 严重: Parse error in application web.xml file at jndi:/localhost/ipws/WEB-INF/web.xml java.lang.NoSuchMethodException: org.apache.catalina.deploy.WebXml
 
 在tomcat 配置文件context.xml中添加<Loader delegate="true" />即可(注意有可能造成扫描规则的改变,通配符不能用！！！！慎用)
 
-—————————————————————————MYSQL(centos6    5.7版本安装)—————————————————————————
+—————————————————————————MYSQL(centos6    5.7版本安装)—————————————————————————
 
-注意 ！！！！！！！！！！！！！！！！！！！ centos看这里  [https://blog.csdn.net/ltx06/article/details/78052359](https://blog.csdn.net/ltx06/article/details/78052359)
+注意 ！！！！！！！！！！！！！！！！！！！ centos看这里  [https://blog.csdn.net/ltx06/article/details/78052359](https://blog.csdn.net/ltx06/article/details/78052359)
 
 1检查之前是否有mysql安装
 
@@ -70,7 +70,7 @@ rpm -qa|grep mysql
 
 2强制卸载旧版本
 
-rpm -e mysql-libs-5.1.71-1.el6.x86_64    --nodeps  （注意是--两道杠）
+rpm -e mysql-libs-5.1.71-1.el6.x86_64    --nodeps  （注意是--两道杠）
 
 3建立mysql文件夹（根据需要）
 
@@ -78,7 +78,7 @@ rpm -e mysql-libs-5.1.71-1.el6.x86_64    --nodeps  （注意是--两道杠
 
 4解压tar文件至建立的mysql文件夹
 
-[root@localhost local]# tar -xvf MySQL-5.x.xx-1.linux2.6.x86_64.rpm-bundle.tar  -C  /usr/local/mysql
+[root@localhost local]# tar -xvf MySQL-5.x.xx-1.linux2.6.x86_64.rpm-bundle.tar  -C  /usr/local/mysql
 
 5查看解压后目录文件
 
@@ -86,13 +86,13 @@ ls -l mysql
 
 6安装mysql服务器端和客户端
 
-    rpm -ivh  mysql-community-common-5.7.9-1.el7.x86_64.rpm
+    rpm -ivh  mysql-community-common-5.7.9-1.el7.x86_64.rpm
 
-    rpm -ivh  mysql-community-libs-5.7.9-1.el7.x86_64.rpm             --（依赖于common）
+    rpm -ivh  mysql-community-libs-5.7.9-1.el7.x86_64.rpm             --（依赖于common）
 
-    rpm -ivh  mysql-community-client-5.7.9-1.el7.x86_64.rpm          --（依赖于libs）
+    rpm -ivh  mysql-community-client-5.7.9-1.el7.x86_64.rpm          --（依赖于libs）
 
-    rpm -ivh  mysql-community-server-5.7.9-1.el7.x86_64.rpm         --（依赖于client、common）
+    rpm -ivh  mysql-community-server-5.7.9-1.el7.x86_64.rpm         --（依赖于client、common）
 
 注意：若出现 file /usr/share/mysql/ukrainian/errmsg.sys from install of MySQL-server-5.5.24-1.linux2.6.x86_64 conflicts with file from package mysql-libs-5.1.61-1.el6_2.1.x86_64或者**mariadb-libs**
 
@@ -106,37 +106,37 @@ yum remove mysql-libs
 
 8生成初始随机密码
 
-mysqld --initialize                         //新版的推荐此方法，执行生会在/var/log/mysqld.log生成随机密码
+mysqld --initialize                         //新版的推荐此方法，执行生会在/var/log/mysqld.log生成随机密码
 
 9更改mysql文件夹的权限（很重要，否则启动不了）
 
-    chmod -R 777  /var/lib/mysql
+    chmod -R 777  /var/lib/mysql
 
 10启动mysql
 
-    service mysqld  start
+    service mysqld  start
 
 11链接mysql
 
-    mysql -u root -p  
+    mysql -u root -p  
 
 12修改密码
 
-      
+      
 
-       ALTER USER 'root'@'localhost' IDENTIFIED BY '新密码';
+       ALTER USER 'root'@'localhost' IDENTIFIED BY '新密码';
 
 13显示数据库
 
-    show databases;
+    show databases;
 
 14退出
 
-    exit;
+    exit;
 
 15修改配置文件
 
-    vim /etc/my.cnf
+    vim /etc/my.cnf
 
 [mysqld]
 
@@ -152,19 +152,19 @@ sql_mode=STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_E
 
 解释 ：
 
-   字符集
+   字符集
 
-    忽略字段大小写
+    忽略字段大小写
 
-    groupby问题：this is incompatible with sql_mode=only_full_group_by
+    groupby问题：this is incompatible with sql_mode=only_full_group_by
 
-    最大字段长度  max_allowed_packet
+    最大字段长度  max_allowed_packet
 
-    忽略空格IGNORE_SPACE
+    忽略空格IGNORE_SPACE
 
 16重启mysql服务
 
-service mysqld restart  
+service mysqld restart  
 
 17重新登入mysql显示字符集，看是否生效
 

@@ -14,19 +14,19 @@ cd /usr/local
 
 wget https://npm.taobao.org/mirrors/node/v14.15.4/node-v14.15.4-linux-x64.tar.xz
 
-### 三、解压并改名 
+### 三、解压并改名 
 
 xz -d node-v14.15.4-linux-x64.tar.xz
 
 tar -xvf node-v14.15.4-linux-x64.tar
 
-mv  node-v14.15.4-linux-x64  node
+mv  node-v14.15.4-linux-x64  node
 
 ### 四、软链
 
-ln -s /usr/local/node/bin/node  /usr/bin/node
+ln -s /usr/local/node/bin/node  /usr/bin/node
 
-ln -s /usr/local/node/bin/npm  /usr/bin/npm
+ln -s /usr/local/node/bin/npm  /usr/bin/npm
 
 ### 五、查看是否安装成功
 

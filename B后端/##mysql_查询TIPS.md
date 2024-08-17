@@ -8,7 +8,7 @@ insert igore into 适用范围不广
 
 方法二：
 
-首先把不允许重复的字段设置为uniqe  然后改用replace into
+首先把不允许重复的字段设置为uniqe  然后改用replace into
 
 ###查询某一天 一周内 一个月，一年内的数据
 
@@ -24,17 +24,17 @@ select * from table where date(column_time) = curdate();
 
 查询一周：
 
-select * from table  where DATE_SUB(CURDATE(), INTERVAL 7 DAY) <= date(column_time);
+select * from table  where DATE_SUB(CURDATE(), INTERVAL 7 DAY) <= date(column_time);
 
 查询一个月：
 
-select * from table  where DATE_SUB(CURDATE(), INTERVAL INTERVAL 1 MONTH) <= date(column_time);
+select * from table  where DATE_SUB(CURDATE(), INTERVAL INTERVAL 1 MONTH) <= date(column_time);
 
-where inputtime>DATE_SUB(CURDATE(), INTERVAL 1 WEEK)           --一周
+where inputtime>DATE_SUB(CURDATE(), INTERVAL 1 WEEK)           --一周
 
-where inputtime>DATE_SUB(CURDATE(), INTERVAL 3 MONTH)           --三月
+where inputtime>DATE_SUB(CURDATE(), INTERVAL 3 MONTH)           --三月
 
-where inputtime>DATE_SUB(CURDATE(), INTERVAL 1 YEAR)           --一年
+where inputtime>DATE_SUB(CURDATE(), INTERVAL 1 YEAR)           --一年
 
 ================================================================================================
 
@@ -100,13 +100,13 @@ select * from user where MONTH(FROM_UNIXTIME(pudate,'%y-%m-%d')) = MONTH(now())
 
 select * from user where YEAR(FROM_UNIXTIME(pudate,'%y-%m-%d')) = YEAR(now()) and MONTH(FROM_UNIXTIME(pudate,'%y-%m-%d')) = MONTH(now())
 
-select * from user where pudate between  上月最后一天  and 下月第一天
+select * from user where pudate between  上月最后一天  and 下月第一天
 
 复制代码
 
 查询当前月份的数据
 
-select name,submittime from enterprise   where date_format(submittime,'%Y-%m')=date_format(now(),'%Y-%m')
+select name,submittime from enterprise   where date_format(submittime,'%Y-%m')=date_format(now(),'%Y-%m')
 
 查询距离当前现在6个月的数据
 

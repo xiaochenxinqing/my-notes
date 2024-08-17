@@ -1,6 +1,6 @@
 # @Valid和@Validated注意事项
 
-1,要引入的包必须全  特别是检查hibernate-validator包是否存在
+1,要引入的包必须全  特别是检查hibernate-validator包是否存在
 
 2.controller 中如果有BindingResult 参数,则全局异常捕获不会捕获BindException异常
 

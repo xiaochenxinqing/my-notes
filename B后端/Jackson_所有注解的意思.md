@@ -10,55 +10,55 @@ Jackson中的注解：
 
 包含类注解
 
-    案例：
+    案例：
 
-public class Name {   @JsonProperty("firstName")   public String _first_name; }
+public class Name {   @JsonProperty("firstName")   public String _first_name; }
 
-    结果，
+    结果，
 
 { "firstName" : "Bob" }
 
 2.@JsonAutoDetect：类注解，用于类定义属性检测。
 
-    案例：
+    案例：
 
-@JsonAutoDetect(fieldVisibility=JsonAutoDetect.Visibility.ANY) public class POJOWithFields {   private int value; }
+@JsonAutoDetect(fieldVisibility=JsonAutoDetect.Visibility.ANY) public class POJOWithFields {   private int value; }
 
-    案例：
+    案例：
 
-@JsonAutoDetect(fieldVisibility=JsonAutoDetect.Visibility.NONE) public class POJOWithNoFields {   // will NOT be included, unless there is access 'getValue()'   public int value; }
+@JsonAutoDetect(fieldVisibility=JsonAutoDetect.Visibility.NONE) public class POJOWithNoFields {   // will NOT be included, unless there is access 'getValue()'   public int value; }
 
 3.@JsonIgnore：用于忽略指定属性的简单注解。
 
-    案例：
+    案例：
 
-public class Value {   public int value;   @JsonIgnore public int internalValue; }
+public class Value {   public int value;   @JsonIgnore public int internalValue; }
 
-    结果，
+    结果，
 
 { "value" : 42 }
 
 4.@JsonIgnoreProperties：指定忽略一组属性或者忽略所有未知属性。
 
-    案例（序列化过层中忽略列表中的指定属性）：
+    案例（序列化过层中忽略列表中的指定属性）：
 
 @JsonIgnoreProperties({"prop1", "prop2"})
 
-  案例：
+  案例：
 
-@JsonIgnoreProperties({ "extra", "uselessValue" }) public class Value {   public int value; }
+@JsonIgnoreProperties({ "extra", "uselessValue" }) public class Value {   public int value; }
 
-   可处理， 
+   可处理， 
 
 { "value" : 42, "extra" : "fluffy", "uselessValue" : -13 }
 
-    案例（反序列化过程中忽略所有的未知属性，即未知属性没有set与get方法）：
+    案例（反序列化过程中忽略所有的未知属性，即未知属性没有set与get方法）：
 
 @JsonIgnoreProperties(ignoreUnknown=true)
 
-  案例：
+  案例：
 
-@JsonIgnoreProperties(ignoreUnknown=true) public class PojoWithAny {   public int value; }
+@JsonIgnoreProperties(ignoreUnknown=true) public class PojoWithAny {   public int value; }
 
 5.@JsonIgnoreType：忽略指定类型的所有属性。
 
@@ -104,13 +104,13 @@ public class Value {   public int value;   @JsonIgnore public int internalVa
 
 19.@JsonTypeInfo：用来指定何种类型的属性值被序列化，如何序列化。
 
-    案例：
+    案例：
 
-// Include Java class name ("com.myempl.ImplClass") as JSON property "class" @JsonTypeInfo(use=Id.CLASS, include=As.PROPERTY, property="class") public abstract class BaseClass { }  public class Impl1 extends BaseClass {   public int x; } public class Impl2 extends BaseClass {   public String name; }  public class PojoWithTypedObjects {   public List<BaseClass> items; }
+// Include Java class name ("com.myempl.ImplClass") as JSON property "class" @JsonTypeInfo(use=Id.CLASS, include=As.PROPERTY, property="class") public abstract class BaseClass { }  public class Impl1 extends BaseClass {   public int x; } public class Impl2 extends BaseClass {   public String name; }  public class PojoWithTypedObjects {   public List<BaseClass> items; }
 
-    生成，
+    生成，
 
-{ "items" : [   { "class":"Impl2", "name":"Bob" },   { "class":"Impl1", "x":13 } ]}
+{ "items" : [   { "class":"Impl2", "name":"Bob" },   { "class":"Impl1", "x":13 } ]}
 
 20.@JsonTypeName：类标记指定逻辑类型名称，如果定义了@JsonTypeInfo，还可以作为java类标记。
 
@@ -130,6 +130,6 @@ public class Value {   public int value;   @JsonIgnore public int internalVa
 
 26.@JsonSerialize
 
-    案例：
+    案例：
 
-public class ValueContainer {   // although nominal type is 'Value', we want to read JSON as 'ValueImpl'   @JsonDeserialize(as=ValueImpl.class)   public Value value;    // although runtime type may be 'AdvancedType', we really want to serialize   // as 'BasicType'; two ways to do this:   @JsonSerialize(as=BasicType.class)   // or could also use: @JsonSerialize(typing=Typing.STATIC)   public BasicType another; }
+public class ValueContainer {   // although nominal type is 'Value', we want to read JSON as 'ValueImpl'   @JsonDeserialize(as=ValueImpl.class)   public Value value;    // although runtime type may be 'AdvancedType', we really want to serialize   // as 'BasicType'; two ways to do this:   @JsonSerialize(as=BasicType.class)   // or could also use: @JsonSerialize(typing=Typing.STATIC)   public BasicType another; }

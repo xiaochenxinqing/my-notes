@@ -30,7 +30,7 @@ return true;
 
 _/**_
 
-_* 查询违�_�
+_* 查询违�_�
 
 _*_ _@param_ _plateNumber车牌_
 
@@ -54,7 +54,7 @@ public void queryCarViolationList(@CurrentToken Token token,String plateNumber,S
 
 String engineNo,HttpServletRequest request,HttpServletResponse response) throws Exception {
 
-    String userId=token.getUserId();
+    String userId=token.getUserId();
 
 _//超过限制，拦截请求_
 

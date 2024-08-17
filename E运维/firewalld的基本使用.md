@@ -6,9 +6,9 @@
 
 查看状态： systemctl status firewalld
 
-开机禁用  ： systemctl disable firewalld
+开机禁用  ： systemctl disable firewalld
 
-开机启用  ： systemctl enable firewalld
+开机启用  ： systemctl enable firewalld
 
 2.systemctl是CentOS7的服务管理工具中主要的工具，它融合之前service和chkconfig的功能于一体。
 
@@ -42,7 +42,7 @@
 
 更新防火墙规则： firewall-cmd --reload
 
-查看区域信息:  firewall-cmd --get-active-zones
+查看区域信息:  firewall-cmd --get-active-zones
 
 查看指定接口所属区域： firewall-cmd --get-zone-of-interface=eth0
 
@@ -56,7 +56,7 @@
 
 添加
 
-firewall-cmd --zone=public --add-port=80/tcp --permanent    （--permanent永久生效，没有此参数重启后失效）
+firewall-cmd --zone=public --add-port=80/tcp --permanent    （--permanent永久生效，没有此参数重启后失效）
 
 重新载入
 

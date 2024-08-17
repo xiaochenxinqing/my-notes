@@ -2,7 +2,7 @@
 
 在CentOS中默认安装有MariaDB，这个是MySQL的分支，但为了需要，还是要在系统中安装MySQL，而且安装完成之后可以直接覆盖掉MariaDB。
 
-### **1 下载并安装MySQL官方的 Yum Repository**
+### **1 下载并安装MySQL官方的 Yum Repository**
 
 wget -i -c http://[dev.mysql.com/get/mysql57-community-release-el7-10.noarch.rpm](http://dev.mysql.com/get/mysql57-community-release-el7-10.noarch.rpm)
 
@@ -18,13 +18,13 @@ yum -y install mysql-community-server
 
 ![55.png](image/55.png)
 
- 
+ 
 
 # **注意：这一步若报错，提示需要：libsasl2.so.2()(64bit)，或**
 
 # **GPG密钥已安装，但是不适用于此软件包的**
 
-# **请看下面的文�**�
+# **请看下面的文�**�
 
 [https://www.jianshu.com/p/0d9d32d8865f](https://www.jianshu.com/p/0d9d32d8865f)
 
@@ -34,7 +34,7 @@ yum -y install mysql-community-server
 
 ### **2 MySQL数据库设置（****字符编码，密码策略等****）**
 
- 首先启动MySQL
+ 首先启动MySQL
 
 systemctl start mysqld.service(必须先启动不能改了my.cnf再启动!切记!)
 
@@ -122,19 +122,19 @@ max_allowed_packet = 100M
 
 sql_mode=STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION（5.7版本）
 
-sql_mode=STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION，IGNORE_SPACE  （8.0版本）
+sql_mode=STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION，IGNORE_SPACE  （8.0版本）
 
 解释 ：
 
-    字符集
+    字符集
 
-    忽略字段大小写
+    忽略字段大小写
 
-    groupby问题：this is incompatible with sql_mode=only_full_group_by
+    groupby问题：this is incompatible with sql_mode=only_full_group_by
 
-    最大字段长度  max_allowed_packet
+    最大字段长度  max_allowed_packet
 
-    忽略空格IGNORE_SPACE
+    忽略空格IGNORE_SPACE
 
 重启数据库
 
@@ -144,13 +144,13 @@ systemctl restart mysqld
 
 **3修改mysql密码**
 
- 此时MySQL已经开始正常运行，不过要想进入MySQL还得先找出此时root用户的密码，通过如下命令可以在日志文件中找出密码：
+ 此时MySQL已经开始正常运行，不过要想进入MySQL还得先找出此时root用户的密码，通过如下命令可以在日志文件中找出密码：
 
 grep "password" /var/log/mysqld.log
 
 ![1201066-20190910152003346-124172716.png](image/1201066-20190910152003346-124172716.png)
 
- 
+ 
 
 如下命令进入数据库：
 
@@ -164,7 +164,7 @@ ALTER USER 'root'@'localhost' IDENTIFIED BY 'new password';
 
 #### 或使用mysqladmin修改密码
 
-使用 mysqladmin 命令修改 MySQL 的 root 用户密码格式为 mysqladmin -u用户名 -p旧密码 password 新密码
+使用 mysqladmin 命令修改 MySQL 的 root 用户密码格式为 mysqladmin -u用户名 -p旧密码 password 新密码
 
 ### **4 开启mysql的远程访问**
 
@@ -176,7 +176,7 @@ flush privileges; 写入数据库授权； （revoke 回收权限，具体咋写
 
 ![333.png](image/333.png)
 
- 注意:这之前要先确保my.cnf中bind-address的访问网址，将 bind-address=127.0.0.1 改成 bind-address=0.0.0.0
+ 注意:这之前要先确保my.cnf中bind-address的访问网址，将 bind-address=127.0.0.1 改成 bind-address=0.0.0.0
 
 ### **5 打开防火墙为firewalld添加开放端口（注意云服务器的控制台防火墙也要打开）**
 

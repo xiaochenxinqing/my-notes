@@ -2,11 +2,11 @@
 
 # 
 
-1.安装 
+1.安装 
 
-pip install supervisor 安装后测试是否成功echo_supervisord_conf
+pip install supervisor 安装后测试是否成功echo_supervisord_conf
 
-2.建立配置文件 
+2.建立配置文件 
 
 创建目录
 
@@ -28,7 +28,7 @@ stderr_logfile=/home/keith/temp/supervisord_stderr.log
 
 [supervisord]
 
-app.py的内容如下，功能是一个每五秒在写入一条记录： 
+app.py的内容如下，功能是一个每五秒在写入一条记录： 
 
 import time
 
@@ -58,7 +58,7 @@ log()
 
 [include]
 
-files = /etc/supervisor/conf.d/*.ini  /etc/supervisor/example.ini
+files = /etc/supervisor/conf.d/*.ini  /etc/supervisor/example.ini
 
 多个路径用空格隔开就可以了
 
@@ -106,25 +106,25 @@ error: <class 'socket.error'>, [Errno 101] Network is unreachable: file: /usr/li
 
 切换到/etc/supervisor目录执行以上的命令
 
-执行supervisorctl start APP_NAME 或者执行 supervisorctl 的相关命令，如果出现
+执行supervisorctl start APP_NAME 或者执行 supervisorctl 的相关命令，如果出现
 
 unix:///tmp/supervisor.sock no such file
 
-说明 Supervisord 服务还没有启动，检查你的 supervisord.conf 文件最后的注释 ; 取消，files 路径没有问题
+说明 Supervisord 服务还没有启动，检查你的 supervisord.conf 文件最后的注释 ; 取消，files 路径没有问题
 
 [include]files = ./conf.d/*.ini
 
-之后在目录 /etc/supervisor 下重新运行
+之后在目录 /etc/supervisor 下重新运行
 
 supervisord -c /etc/supervisor/supervisord.conf
 
-最后附上 supervisord 服务运行命令
+最后附上 supervisord 服务运行命令
 
-重新 read 配置文件: supervisorctl reread
+重新 read 配置文件: supervisorctl reread
 
-重启服务: supervisorctl reload
+重启服务: supervisorctl reload
 
-关闭服务: supervisorctl shutdown
+关闭服务: supervisorctl shutdown
 
 ## 四、配置文件说明
 
@@ -288,7 +288,7 @@ supervisorctl reload //重新启动配置中的所有程序
 
 若是centos7：
 
-  start supervisord.service //启动supervisor并加载默认配置文件
+  start supervisord.service //启动supervisor并加载默认配置文件
 
 systemctl enable supervisord.service //将supervisor加入开机启动项
 
@@ -304,4 +304,4 @@ systemctl enable supervisord.service //将supervisor加入开机启动项
     解决办法：使用ps -fe | grep supervisord查看所有启动过的supervisord服务，kill相关的进程。
     启动了多个supervisord服务，导致无法正常关闭服务
 
-      4 若想用supervisor管理redis 需要将dameon  设为no    supervisord 设为auto
+      4 若想用supervisor管理redis 需要将dameon  设为no    supervisord 设为auto

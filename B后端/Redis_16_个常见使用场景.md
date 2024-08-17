@@ -1,6 +1,6 @@
 # Redis 16 个常见使用场景
 
-#  Redis 16 个常见使用场景
+#  Redis 16 个常见使用场景
 
 目录
 
@@ -39,7 +39,7 @@ String 类型，因为 Redis 是分布式的独立服务，可以在多个应用
 
 String 类型setnx方法，只有不存在时才能添加成功，返回true
 
-publicstaticbooleangetLock(String key){    Long flag = jedis.setnx(key, "1");    if (flag == 1) {        jedis.expire(key, 10);    }    return flag == 1; }  publicstaticvoidreleaseLock(String key){    jedis.del(key); } 
+publicstaticbooleangetLock(String key){    Long flag = jedis.setnx(key, "1");    if (flag == 1) {        jedis.expire(key, 10);    }    return flag == 1; }  publicstaticvoidreleaseLock(String key){    jedis.del(key); } 
 
 ### 4、全局ID
 
@@ -67,19 +67,19 @@ String类型的bitcount（1.6.6的bitmap数据结构介绍）
 
 字符是以8位二进制存储的
 
-set k1 a setbit k1 61setbit k1 70get k1  /* 6 7 代表的a的二进制位的修改 a 对应的ASCII码是97，转换为二进制数据是01100001 b 对应的ASCII码是98，转换为二进制数据是01100010  因为bit非常节省空间（1 MB=8388608 bit），可以用来做大数据量的统计。 */
+set k1 a setbit k1 61setbit k1 70get k1  /* 6 7 代表的a的二进制位的修改 a 对应的ASCII码是97，转换为二进制数据是01100001 b 对应的ASCII码是98，转换为二进制数据是01100010  因为bit非常节省空间（1 MB=8388608 bit），可以用来做大数据量的统计。 */
 
 例如：在线用户统计，留存用户统计
 
-setbit onlineusers 01  setbit onlineusers 11  setbit onlineusers 20 
+setbit onlineusers 01  setbit onlineusers 11  setbit onlineusers 20 
 
 支持按位与、按位或等等操作
 
-BITOPANDdestkeykey[key...] ，对一个或多个 key 求逻辑并，并将结果保存到 destkey 。        BITOPORdestkeykey[key...] ，对一个或多个 key 求逻辑或，并将结果保存到 destkey 。  BITOPXORdestkeykey[key...] ，对一个或多个 key 求逻辑异或，并将结果保存到 destkey 。  BITOPNOTdestkeykey ，对给定 key 求逻辑非，并将结果保存到 destkey 。 
+BITOPANDdestkeykey[key...] ，对一个或多个 key 求逻辑并，并将结果保存到 destkey 。        BITOPORdestkeykey[key...] ，对一个或多个 key 求逻辑或，并将结果保存到 destkey 。  BITOPXORdestkeykey[key...] ，对一个或多个 key 求逻辑异或，并将结果保存到 destkey 。  BITOPNOTdestkeykey ，对给定 key 求逻辑非，并将结果保存到 destkey 。 
 
 计算出7天都在线的用户
 
-BITOP "AND""7_days_both_online_users""day_1_online_users""day_2_online_users" ...  "day_7_online_users"
+BITOP "AND""7_days_both_online_users""day_1_online_users""day_2_online_users" ...  "day_7_online_users"
 
 ### 8、购物车
 
@@ -145,7 +145,7 @@ spop myset
 
 假如：iPhone11 上市了
 
-sadd brand:apple iPhone11  sadd brand:ios iPhone11  sad screensize:6.0-6.24 iPhone11  sad screentype:lcd iPhone 11 
+sadd brand:apple iPhone11  sadd brand:ios iPhone11  sad screensize:6.0-6.24 iPhone11  sad screentype:lcd iPhone 11 
 
 赛选商品，苹果的、ios的、屏幕在6.0-6.24之间的，屏幕材质是LCD屏幕
 

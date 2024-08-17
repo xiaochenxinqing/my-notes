@@ -14,7 +14,7 @@
 
 # **2、 Maven安装准备工作**
 
-### **2.1** [Apache Maven官方网](https://links.jianshu.com/go?to=http%3A%2Fmaven.apache.org%2Fdownload.cgi)
+### **2.1** [Apache Maven官方网](https://links.jianshu.com/go?to=http%3A%2Fmaven.apache.org%2Fdownload.cgi)
 
 ![.webp](image/.webp)
 
@@ -31,7 +31,7 @@ image.png
 
 wget http://mirrors.tuna.tsinghua.edu.cn/apache/maven/maven-3/3.6.1/binaries/apache-maven-3.6.1-bin.tar.gz
 
-# **3、指定文件目录安�**�
+# **3、指定文件目录安�**�
 
 - 进入/usr/local/目录进行创建一个maven3文件夹
 - 或者直接指定参数进行创建,-p(parent)，如果父目录下面的子目录无也进行创建

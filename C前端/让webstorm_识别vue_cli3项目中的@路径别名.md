@@ -2,7 +2,7 @@
 
 # 让webstorm 识别vue cli3项目中的@路径别名
 
-axel10 2019-02-22 [原文](https://www.bbsmax.com/link/MU81RTIzVjRkNw==)
+axel10 2019-02-22 [原文](https://www.bbsmax.com/link/MU81RTIzVjRkNw==)
 
 在setting -> languages&frameworks -> webpack里选择配置文件路径为 node_modules/@vue/cli-service/webpack.config.js即可。
 

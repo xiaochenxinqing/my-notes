@@ -8,9 +8,9 @@ rpm -qa|grep -i mysql
 
 显示之前安装了：
 
-     MySQL-client-5.5.25a-1.rhel5
+     MySQL-client-5.5.25a-1.rhel5
 
-     MySQL-server-5.5.25a-1.rhel5
+     MySQL-server-5.5.25a-1.rhel5
 
 2、停止mysql服务、删除之前安装的mysql
 

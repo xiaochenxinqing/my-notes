@@ -106,7 +106,7 @@ $ tcpdump -ni eth0 length == 64
 
 6. 过滤 TCP 特殊标记的数据包
 
-抓取某主机发送的 [RS](http://www.elecfans.com/tags/rs/)T 数据包：
+抓取某主机发送的 [RS](http://www.elecfans.com/tags/rs/)T 数据包：
 
 $ tcpdump -ni eth0 src host 192.168.1.100 and ‘tcp［tcpflags］ & （tcp-rst） ！= 0’
 

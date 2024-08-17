@@ -2,7 +2,7 @@
 
 1.必须加sudo
 
-Runtime.getRuntime().exec(new String[]{"sudo", "/bin/sh", "-c",  "xxx.sh"});
+Runtime.getRuntime().exec(new String[]{"sudo", "/bin/sh", "-c",  "xxx.sh"});
 
 原因:
 

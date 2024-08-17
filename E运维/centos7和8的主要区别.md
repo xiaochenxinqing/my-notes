@@ -8,7 +8,7 @@
 
 自己安装的centos7mini版：两个都是开启的
 
-# centos版本 [root@yang ~]# cat /etc/redhat-release CentOS Linux release 7.9.2009 (Core)  # 内核版本 [root@yang ~]# uname -r3.10.0-1160.24.1.el7.x86_64  # 默认是启动的systemctl status network  # 默认是关闭的systemctl status NetworkManager
+# centos版本 [root@yang ~]# cat /etc/redhat-release CentOS Linux release 7.9.2009 (Core)  # 内核版本 [root@yang ~]# uname -r3.10.0-1160.24.1.el7.x86_64  # 默认是启动的systemctl status network  # 默认是关闭的systemctl status NetworkManager
 
 ## centos8
 
@@ -16,7 +16,7 @@ centos8没有network，使用NetworkManager管理网络
 
 修改ip地址等操作之后，使用systemctl restart NetworkManager重启网络服务
 
-# centos版本 [root@VM-0-13-centos ~]# cat /etc/redhat-release CentOS Linux release 8.2.2004 (Core)  # 内核版本 [root@VM-0-13-centos ~]# uname -r4.18.0-193.28.1.el8_2.x86_64  # centos8 没有network [root@VM-0-13-centos ~]# systemctl status networkUnit network.service could not be found.
+# centos版本 [root@VM-0-13-centos ~]# cat /etc/redhat-release CentOS Linux release 8.2.2004 (Core)  # 内核版本 [root@VM-0-13-centos ~]# uname -r4.18.0-193.28.1.el8_2.x86_64  # centos8 没有network [root@VM-0-13-centos ~]# systemctl status networkUnit network.service could not be found.
 
 # yum和dnf
 
@@ -48,11 +48,11 @@ Dandified 像花花公子的
 
 # 防火墙
 
-centso7：firewalld底层使用iptables  centos8：nftables取代iptables  # **但是使用都是一样的(如: systemctl status firewalld**
+centso7：firewalld底层使用iptables  centos8：nftables取代iptables  # **但是使用都是一样的(如: systemctl status firewalld**
 
 # 时间同步
 
-centso7支持NTP和chronyd  centos8只支持chronyd
+centso7支持NTP和chronyd  centos8只支持chronyd
 
 # docker和podman
 
