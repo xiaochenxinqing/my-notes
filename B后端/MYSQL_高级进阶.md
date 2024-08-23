@@ -8,7 +8,7 @@
 
  log-error 错误日志
 
- log 查询日志
+ log 查询日志11
 
 2.默认数据文件位置： /var/lib/mysql 文件夹 ，其中
 
