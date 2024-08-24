@@ -88,8 +88,6 @@
 
 示例：
 
-![我的头像](https://www.zybuluo.com/static/img/my_head.jpg)
-
 # Cmd Markdown 高阶语法手册
 
 ### 1. 内容目录
@@ -311,7 +309,7 @@ D-->>A: Dashed open arrow
         - [ ] 准备邮轮上需要携带的物品
         - [ ] 浏览日本免税店的物品
         - [x] 购买蓝宝石公主号七月一日的船票
-        
+
 对应显示如下待办事宜 Todo 列表：
         
 - [ ] **Cmd Markdown 开发**
@@ -325,7 +323,7 @@ D-->>A: Dashed open arrow
     - [ ] 准备邮轮上需要携带的物品
     - [ ] 浏览日本免税店的物品
     - [x] 购买蓝宝石公主号七月一日的船票
-        
+      
         
 [^footnote]: 这是一个 *注脚* 的 **文本**。
 
