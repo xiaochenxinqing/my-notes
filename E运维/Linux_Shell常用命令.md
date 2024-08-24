@@ -24,6 +24,9 @@ whereis       查找二进制文件
 
 systemctl    start /stop/status/enable/disable  xxx.service systemctl 相关操作(启动、停止、查看状态、设置开机启动、禁止开机启动)
 
+### firewalld
+
+
 firewall-cmd --zone=public --add-port=80/tcp --permanent    （--permanent永久生效，没有此参数重启后失效）
 
 重新载入
@@ -42,9 +45,9 @@ firewall-cmd --zone=public --remove-port=80/tcp --permanent
 
 firewall-cmd --list-all 
 
-========================================
+### 查看系统版本
 
-查看系统版本:
+
 
  cat /etc/redhat-release (,适用于RedHat,CentOS)
 

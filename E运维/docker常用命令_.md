@@ -14,17 +14,17 @@ docker  rmi  $(docker images -f "dangling=true" -q)    删除空镜像 或 docke
 
 通过 docker images 命令显示的 <none> 镜像，这些镜像是由于新加镜像占用了原有镜像的标签，原有镜像就变成了 <none> 镜像)
 
-# 停止并删除工程中所有服务的容器、网络
+#### 停止并删除工程中所有服务的容器、网络
 
 docker-compose stop
 
-# 停止并删除工程中所有服务的容器、网络、镜像
+#### 停止并删除工程中所有服务的容器、网络、镜像
 
 docker-compose down --rmi all 
 
 docker-compose down --rmi local (只删除构建产生的镜像 基础镜像不删除)
 
-# 停止并删除工程中所有服务的容器、网络、数据卷
+#### 停止并删除工程中所有服务的容器、网络、数据卷
 
 docker-compose down -v
 
