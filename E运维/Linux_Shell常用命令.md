@@ -1,4 +1,6 @@
-# Linux&Shell常用命令
+# Linux常用命令
+
+
 
 ps -ef|grep xxx                  查看进程
 
