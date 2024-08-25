@@ -1,4 +1,4 @@
-# @Valid和@Validated注意事项
+# @Valid和@Validated注意事项 
 
 1,要引入的包必须全  特别是检查hibernate-validator包是否存在
 
