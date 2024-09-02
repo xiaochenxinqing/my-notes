@@ -32,14 +32,7 @@ ln -s /usr/local/node/bin/npm  /usr/bin/npm
 
 node -v
 
-npm config set registry [https://registry.npm.taobao.org](https://registry.npm.taobao.org/)
+npm config set registry https://registry.npmmirror.com
 
 npm install @vue/cli-service -g
 
-作者：周星星的学习笔记
-
-链接：[https://www.jianshu.com/p/b30508293fb0](https://www.jianshu.com/p/b30508293fb0)
-
-来源：简书
-
-著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
