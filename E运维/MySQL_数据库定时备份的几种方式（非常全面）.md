@@ -1,8 +1,6 @@
 # MySQL 数据库定时备份的几种方式（非常全面）
 
-# **MySQL 数据库定时备份的几种方式（非常全面）**
 
-[![.jpg](image/.jpg)](https://www.zhihu.com/people/mingongge365)
 
 [民工哥](https://www.zhihu.com/people/mingongge365)
 
