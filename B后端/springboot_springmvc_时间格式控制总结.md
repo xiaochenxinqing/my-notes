@@ -1,3 +1,9 @@
+
+
+```
+@NotBlank
+```
+
 # springboot springmvc 时间格式控制总结
 
 ### 1.前端→对象（验证）
