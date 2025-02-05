@@ -24,7 +24,7 @@ yum -y install mysql-community-server
 
 # **GPG密钥已安装，但是不适用于此软件包的**
 
-# **请看下面的文�**�
+# **请看下面的文�
 
 [https://www.jianshu.com/p/0d9d32d8865f](https://www.jianshu.com/p/0d9d32d8865f)
 
@@ -127,13 +127,13 @@ sql_mode=STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_E
 解释 ：
 
     字符集
-
+    
     忽略字段大小写
-
+    
     groupby问题：this is incompatible with sql_mode=only_full_group_by
-
+    
     最大字段长度  max_allowed_packet
-
+    
     忽略空格IGNORE_SPACE
 
 重启数据库

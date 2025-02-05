@@ -52,7 +52,7 @@ daemonize yes
 
 protected-mode no
 
-注意:bind    这里很多人会误以为绑定的ip应该是请求来源的ip。其实不然，这里应该绑定的是你redis服务器本身接受请求的ip。
+**注意:bind    这里很多人会误以为绑定的ip应该是请求来源的ip。其实不然，这里应该绑定的是你redis服务器本身接受请求的ip。**
 
 后台启动
 

@@ -1,0 +1,105 @@
+```
+##tar导入为镜像
+
+docker load - i      包名.tar 
+
+##镜像运行为容器
+
+docker run  -itd  --name  容器名   --privileged=true    镜像名:镜像tag     bash             （注：再有其他需要的参数可自行添加）
+
+docker run  -itd  --name  finaltest  -p 3002:2181 -p 3001:2000 -p 3000:3000 -p 5901:3307  -p 8014:3306 -v /root/finaltest-data:/mnt/all-data  -e HSM_IP=120.226.208.115 -e HSM_PORT=9034     venus-dbsec-final:1.0     bash  
+
+docker run  -itd  --name  yxcfinaltest1    -e HSM_IP=120.226.208.115 -e HSM_PORT=9034   -v /root/yxcfinaltest1-data:/mnt/all-data   venus-dbsec-final:1.0     bash  
+
+
+
+
+docker run  -itd \
+	--name  finaltest \
+	-p 3002:2181 -p 3001:2000 -p 3000:3000 -p 5901:3307  \
+    -e HSM_IP=120.226.208.115 -e HSM_PORT=9034    \
+    -v /root/finaltest1-data:/mnt/all-data    \
+    
+    venus-dbsec-final:1.0     bash  
+
+
+
+
+
+
+-p 3002:2181 -p 3001:2000 -p 3000:3000 -p 5901:3307  -p 8014:3306 (测)
+   10156        10140		10116		  10320			10439
+
+（注：再有其他需要的参数可自行添加）
+
+##进入容器
+
+docker exec -it   容器名 bash
+
+
+
+##向容器内复制文件
+
+docker cp  /path/file.txt    容器名:/root
+
+
+
+##容器提交为新镜像
+
+docker commit  --change='ENTRYPOINT ["/root/baseStart.sh"]' --change='HEALTHCHECK --interval=20s CMD /root/healthCheck.sh'  容器名   新镜像名:新镜像tag
+docker commit   basetest   venus-dbsec-base:1.0
+
+
+##镜像导出为tar
+
+docker save -o    venus-dbsec-base-1.0.tar     venus-dbsec-base:1.0
+
+docker save -o    venus-dbsec-final-1.0.tar     venus-dbsec-final:1.0
+
+##
+压缩镜像 
+docker export -o img.tar 容器id
+docker import img.tar  img1:1.0
+
+
+```
+
+
+
+
+
+
+
+mysql: 
+
+https://blog.csdn.net/m0_63838460/article/details/144735715
+
+https://blog.csdn.net/wcy18818429914/article/details/143720576?utm_medium=distribute.pc_relevant.none-task-blog-2~default~baidujs_baidulandingword~default-1-143720576-blog-144735715.235^v43^pc_blog_bottom_relevance_base2&spm=1001.2101.3001.4242.2&utm_relevant_index=4
+
+https://blog.csdn.net/Fponyo/article/details/143377467
+
+
+
+```
+cd /etc/yum.repos.d
+
+rm -rf  * 
+
+curl -o /etc/yum.repos.d/CentOS-Base.repo https://mirrors.aliyun.com/repo/Centos-7.repo
+
+yum makecache
+yum -y update
+yum repolist
+```
+
+
+
+
+
+
+
+ docker run  -itd  --name  yxcfinaltest1   --network=none  -e HSM_IP=120.226.208.115 -e HSM_PORT=9034     venus-dbsec-final:1.0     bash
+
+docker network disconnect none yxcfinaltest1 
+
+docker network connect bridge yxcfinaltest1 

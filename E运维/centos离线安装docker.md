@@ -1,6 +1,6 @@
 # centos离线安装docker
 
-**1.准备安装�**�
+**1.准备安装匪*
 
  安装包官方地址：https://download.docker.com/linux/static/stable/x86_64/
 
@@ -24,6 +24,9 @@ cp docker/* /usr/bin/
 
 代码如下（示例）：
 
+
+
+```
 [Unit] 
 
 Description=Docker Application Container Engine
@@ -85,12 +88,19 @@ StartLimitInterval=60s
 [Install]
 
 WantedBy=multi-user.target
+```
+
+
+
+
+
+
 
 **注意:**
 
 a.此处的–insecure-registry=127.0.0.1（此处改成你私服ip）设置是针对有搭建了自己私服Harbor时允许docker进行不安全的访问，否则访问将会被拒绝。
 
-b.tcp://0.0.0.0:2376是允许外部链接访问,若只允许本机更改为127.0.0.
+b.tcp://0.0.0.0:2376是允许外部链接访问,   若只允许本机更改为127.0.0.
 
 **5.启动docker**
 
@@ -108,7 +118,7 @@ systemctl start docker
 
 设置开机启动
 
-systemctl enable docker.service
+systemctl enable docker
 
 **6.查看docker服务状态**
 
