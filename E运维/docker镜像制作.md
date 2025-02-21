@@ -7,9 +7,12 @@ docker load - i      包名.tar
 
 docker run  -itd  --name  容器名   --privileged=true    镜像名:镜像tag     bash             （注：再有其他需要的参数可自行添加）
 
-docker run  -itd  --name  finaltest  -p 3002:2181 -p 3001:2000 -p 3000:3000 -p 5901:3307  -p 8014:3306 -v /root/finaltest-data:/mnt/all-data  -e HSM_IP=120.226.208.115 -e HSM_PORT=9034     venus-dbsec-final:1.0     bash  
+docker run  -itd  --name  finaltest  -p 3002:2181 -p 3001:2000 -p 3000:3000 -p 8014:3307   -v /root/finaltest-data:/mnt/all-data       venus-dbsec-final:1.0     bash  
 
 docker run  -itd  --name  yxcfinaltest1    -e HSM_IP=120.226.208.115 -e HSM_PORT=9034   -v /root/yxcfinaltest1-data:/mnt/all-data   venus-dbsec-final:1.0     bash  
+
+
+docker run  -itd  --name  finaltest  -p 2181:2181 -p 2000:2000 -p 3000:3000 -p 3307:3307  -p 3306:3306 -v /root/finaltest-data:/mnt/all-data        venus-dbsec-final:1.0     bash  
 
 
 
@@ -96,10 +99,18 @@ yum repolist
 
 
 
+ docker run  -itd  --name  finaltest1  -e HSM_IP=120.226.208.115 -e HSM_PORT=9034     venus-dbsec-final:1.0     bash
+
+ docker run  -itd  --name  finaltest2   --network=none  -e HSM_IP=120.226.208.115 -e HSM_PORT=9034     venus-dbsec-final:1.0     bash
+
+docker network disconnect none  finaltest2 
+
+docker network connect bridge finaltest2 
 
 
- docker run  -itd  --name  yxcfinaltest1   --network=none  -e HSM_IP=120.226.208.115 -e HSM_PORT=9034     venus-dbsec-final:1.0     bash
 
-docker network disconnect none yxcfinaltest1 
 
-docker network connect bridge yxcfinaltest1 
+
+
+
+docker run -d  --name es   -e "ES_JAVA_OPTS=-Xms1024M -Xmx1024m"  -e "discovery.type=single-node"  --privileged  -p 9200:9200  -p 9300:9300  

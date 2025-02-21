@@ -1,6 +1,6 @@
 # centos离线安装docker
 
-**1.准备安装匪*
+**1.准备安装包
 
  安装包官方地址：https://download.docker.com/linux/static/stable/x86_64/
 
