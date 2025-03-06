@@ -61,8 +61,8 @@ docker save -o    venus-dbsec-final-1.0.tar     venus-dbsec-final:1.0
 
 ##
 压缩镜像 
-docker export -o img.tar 容器id
-docker import img.tar  img1:1.0
+docker export -o basecon.tar 容器id
+docker import basecon.tar  venus-dbsec-base:1.0
 
 
 ```
@@ -114,3 +114,22 @@ docker network connect bridge finaltest2
 
 
 docker run -d  --name es   -e "ES_JAVA_OPTS=-Xms1024M -Xmx1024m"  -e "discovery.type=single-node"  --privileged  -p 9200:9200  -p 9300:9300  
+
+
+
+
+
+docker exec finaltest   device_manage import conf
+
+
+
+docker   rm -f  finaltest
+
+docker run  -itd  --name  finaltest  -p 2181:2181 -p 2000:2000 -p 3000:3000 -p 3307:3307 -p5433:5433  -v /root/image_data:/image_data   -e PROXY_TYPES="mysql" -e JAVA_MEM_COMMON_OPTS="-Xmx8g -Xms512m -Xmn512m -Xss512k"    venus-dbsec-final:1.0     bash
+
+
+
+docker run  -itd  --name  finaltest  -p 2181:2181 -p 2000:2000 -p 3000:3000 -p 3307:3307 -p5433:5433  -v /root/image_data:/image_data  -v /root/finaltest-data:/mnt/all-data     -e PROXY_TYPES="mysql" -e JAVA_MEM_COMMON_OPTS="-Xmx8g -Xms512m -Xmn512m -Xss512k"    venus-dbsec-final:1.0     bash
+
+
+
