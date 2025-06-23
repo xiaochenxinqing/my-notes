@@ -129,7 +129,49 @@ docker run  -itd  --name  finaltest  -p 2181:2181 -p 2000:2000 -p 3000:3000 -p 3
 
 
 
+docker run  -itd  --name  finaltest  -p 2181:2181 -p 2000:2000 -p 3000:3000 -p 3307:3307 -p5433:5433  -v /root/finaltest-data:/mnt/all-data   -e PROXY_TYPES="mysql" -e JAVA_MEM_COMMON_OPTS="-Xmx4g -Xms512m -Xmn512m -Xss512k"    venus-dbsec-final:1.0     bash
+
+
+
 docker run  -itd  --name  finaltest  -p 2181:2181 -p 2000:2000 -p 3000:3000 -p 3307:3307 -p5433:5433  -v /root/image_data:/image_data  -v /root/finaltest-data:/mnt/all-data     -e PROXY_TYPES="mysql" -e JAVA_MEM_COMMON_OPTS="-Xmx8g -Xms512m -Xmn512m -Xss512k"    venus-dbsec-final:1.0     bash
 
+=============================
+
+数据准备
 
 
+
+登录 MySQL：mysql -u root -p
+执行这条SQL： ALTER USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY 'password';    #root和password需要根据实际情况替换为自己的数据。
+
+​          
+
+
+
+清空数据 
+
+sysbench oltp_read_only --mysql-host='192.188.1.222' --mysql-port=3307 --mysql-user=root --mysql-password='root' --mysql-db=testdb --tables=1 --table-size=1000000 --report-interval=10 --time=3600 --threads=128 --max-requests=0 --percentile=99 --mysql-ignore-errors="all" --rand-type=uniform --range_selects=off --auto_inc=off cleanup
+
+sysbench oltp_read_only --mysql-host='192.188.1.221' --mysql-port=3306 --mysql-user=root --mysql-password='root' --mysql-db=testdb1 --tables=1 --table-size=1000000 --report-interval=10 --time=3600 --threads=128 --max-requests=0 --percentile=99 --mysql-ignore-errors="all" --rand-type=uniform --range_selects=off --auto_inc=off cleanup
+
+
+
+#插入数据
+
+sysbench oltp_insert --mysql-host='192.188.1.222' --mysql-port=3307 --mysql-user=root --mysql-password='root' --mysql-db=testdb --tables=1 --table-size=1000000 --report-interval=10 --time=3600 --threads=1  prepare
+
+sysbench oltp_insert --mysql-host='192.188.1.221' --mysql-port=3306 --mysql-user=root --mysql-password='root' --mysql-db=testdb1 --tables=1 --table-size=1000000 --report-interval=10 --time=3600 --threads=1  prepare
+
+#性能测试
+
+sysbench oltp_read_write --mysql-host='192.188.1.222' --mysql-port=3307 --mysql-user=root --mysql-password='root' --mysql-db=testdb --tables=1 --table-size=1000000 --report-interval=5 --time=180 --threads=200 --max-requests=0 --mysql-ignore-errors="all" --range_selects=off --rand-type=uniform --auto_inc=off run
+
+sysbench oltp_read_write --mysql-host='192.188.1.221' --mysql-port=3306 --mysql-user=root --mysql-password='root' --mysql-db=testdb1 --tables=1 --table-size=1000000 --report-interval=5 --time=180 --threads=200 --max-requests=0 --mysql-ignore-errors="all" --range_selects=off --rand-type=uniform --auto_inc=off run
+
+
+
+
+
+
+
+mysql    !6#v@R4Y*k      10001

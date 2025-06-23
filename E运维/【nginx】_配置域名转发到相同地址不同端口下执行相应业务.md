@@ -1,6 +1,6 @@
 # 【nginx】 配置域名转发到相同地址不同端口下执行相应业务
 
-# 【nginx】 配置域名转发到相同地址不同端口下执行相应业务
+# 
 
 快速奔跑的大米粒 2019-05-21 [原文](https://www.bbsmax.com/link/Z0dkWGoyeUdKNA==)
 

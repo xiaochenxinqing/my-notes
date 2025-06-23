@@ -387,3 +387,78 @@
 `    }    `
 
 `}`
+
+//=======================================================
+
+多个项目通过后缀访问：
+
+```
+server {
+        listen 443 ssl;
+        server_name esms;
+
+        proxy_set_header Cookie $http_cookie;
+        proxy_set_header X-Forwarded-Host $host;
+        proxy_set_header X-Forwarded-Server $host;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+
+        ssl_certificate      cert/server.pem;
+        ssl_certificate_key  cert/server.key.nopass;#当前conf/目录下
+
+       location /im {
+             alias    /usr/fisec/esms/web;
+             index  index.html index.htm;
+             try_files $uri $uri/    @router;
+       }
+        #解决刷新404的问题
+        location @router {
+         rewrite ^.*$ /im/index.html;
+        }
+        #接口转发
+       location /encChat/ {
+          proxy_pass  https://127.0.0.1:8081/;
+       }
+
+
+
+    }
+```
+
+
+
+单个web通过端口访问：
+
+```
+server {
+        listen 443 ssl;
+        server_name esms;
+
+        proxy_set_header Cookie $http_cookie;
+        proxy_set_header X-Forwarded-Host $host;
+        proxy_set_header X-Forwarded-Server $host;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+
+        ssl_certificate      cert/server.pem;
+        ssl_certificate_key  cert/server.key.nopass;#当前conf/目录下
+
+
+         root   /usr/fisec/esms/web;  #vue项目的打包后的dist
+
+         location / {
+             try_files $uri $uri/ @router;#需要指向下面的@router否则会出现vue的路由在nginx中刷新出现404
+             index  index.html index.htm;
+         }
+         #对应上面的@router，主要原因是路由的路径资源并不是一个真实的路径，所以无法找到具体的文件
+         #因此需要rewrite到index.html中，然后交给路由在处理请求资源
+         location @router {
+              rewrite ^.*$ /index.html last;
+         }
+        #接口转发
+       location /encChat/ {
+          proxy_pass  https://127.0.0.1:8081/;
+       }
+
+
+
+    }
+```

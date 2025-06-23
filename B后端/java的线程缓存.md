@@ -66,10 +66,17 @@ public static void main(String[] args) throws InterruptedException {
 }
 ```
 
-这种就不会退出循环, 因为user2的name设置为李四, 会使user1和user 都变为李四,  但并不会退出循环,  因为user是被volatile修饰的 , 但user1 没有 所有 循环时还是取的线程缓存 所以一直是张三不会跳出循环
+这种就不会退出循环, 因为user2的name设置为李四, 会使user1和user 都变为李四,  但并不会退出循环,  因为user是被volatile修饰的 , 但user1 没有， 所以循环时还是取的线程缓存 所以一直是张三不会跳出循环
 
 
 
 
 
 ![image-20241107113310594](assets/image-20241107113310594.png)
+
+还有个为什么要给你道歉的理由  我说出来你可能觉得挺扯的  
+
+你的长相 气质包括声音 都真的特别像我高中同桌  第一次见到我都惊呆了，还能有这么像的人
+
+
+
