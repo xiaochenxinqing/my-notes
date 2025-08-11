@@ -60,7 +60,7 @@ nmcli con add con-name "新的 connection 名字"  type  ethernet  ifname  "对�
 
 ##更新连接
 
-nmcli  con modify  [连接名称]  ipv4.address 192.188.1.103/24 ipv4.gateway 192.188.1.1 ipv4.method manual    
+nmcli  con modify  [连接名称]  ipv4.address 192.188.1.103/24 ipv4.gateway 192.188.1.1 ipv4.method manual     ipv4.dns 8.8.8.8
 
 ##重载
 
@@ -79,3 +79,13 @@ nmcli connection modify MyWiFi connection.autoconnect yes
 nmcli dev con 设备名   
 
 (注意:  nmcli con up 和 nmcli dev con 都会立即让新网络设置生效,   但  nmcli dev con会导致这个设备随机连接该设备下的某个链接,所以最好用上面的con up)
+
+
+
+```SQL
+iptables -P INPUT ACCEPT
+iptables -F
+iptables -vL
+
+sudo tcpdump -i eth0 port 2181 -w /mnt/dbsec/2181.pcap
+```

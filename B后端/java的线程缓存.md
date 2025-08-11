@@ -28,6 +28,16 @@ public static     User user =  new User("张三");
 
 
 
+| 场景                                          | 是否强制刷新 | 说明                    |
+| --------------------------------------------- | ------------ | ----------------------- |
+| `volatile` 读写(最可靠)                       | ✅            | 每次强制从主内存读写    |
+| `synchronized`/Lock                           | ✅            | 加锁时强制同步主内存    |
+| `Atomic*` 原子类                              | ✅            | 内部基于 volatile & CAS |
+| 主动线程切换（sleep/wait） System.out.println | ❓（不可靠）  | 有可能发生，不能依赖    |
+| 特定并发容器（如 ConcurrentMap）              | ✅            | 内部已封装可见性逻辑    |
+
+
+
 
 
 **疑问:**  为什么   "张三".equals(user.getName())这一句不会重新读主内存(即便放在while 循环体中也不行 ) 而   aaa.append(user1.getName()); 会读主内存?
@@ -74,9 +84,7 @@ public static void main(String[] args) throws InterruptedException {
 
 ![image-20241107113310594](assets/image-20241107113310594.png)
 
-还有个为什么要给你道歉的理由  我说出来你可能觉得挺扯的  
 
-你的长相 气质包括声音 都真的特别像我高中同桌  第一次见到我都惊呆了，还能有这么像的人
 
 
 
