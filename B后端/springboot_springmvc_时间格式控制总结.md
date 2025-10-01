@@ -22,7 +22,7 @@
 
 或者
 
-   方法一：Jackson的@JsonFormat注解
+   Jackson的@JsonFormat注解
 
 ```
 @JsonFormat(pattern = "yyyy-MM-dd")
