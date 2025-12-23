@@ -62,7 +62,7 @@ yum install zlib-devel
 
 配置完成了，接下来就可以编译安装了，依次执行：
 
-make
+make  （耐心稍等片刻）
 make install
 
  看到如下提示即可说明编译安装成功：
@@ -141,6 +141,10 @@ chown -R postgres:postgres /usr/local/postgresql/
 
 同时在postgresql的目录可以看到生成的数据目录data以及该目录的相关数据和配置文件：
 
+```
+cd  /usr/local/postgresql
+```
+
 ![img](assets/1195700-20180701095126445-528687406.jpg)
 
 ![img](assets/1195700-20180701095222195-1706127140.jpg)
@@ -148,6 +152,8 @@ chown -R postgres:postgres /usr/local/postgresql/
  
 
 如上图，**base目录是表空间目录**，**global目录是相关全局变量的目录**
+
+再执行  cd data
 
 pg_hba.conf   一个是访问控制配置（127.0.0.1改为信任的客户端ip网段使其可以远程访问），
 
@@ -182,6 +188,8 @@ firewall-cmd --zone=public --list-ports
 ![img](assets/1195700-20180701095823737-2136882997.jpg)
 
 由于我们设置了环境变量，所以已经指定了数据目录PGDATA，`-l`表示日志文件目录，通常需要指定，所以我们在/usr/local/postgresql根目录下再创建一个log目录用来存放日志文件（注意别忘记赋予可写的权限）， 
+
+mkdir  /usr/local/postgresql/log
 
 
 最后运行**`pg_ctl start -l /usr/local/postgresql/log/pg_server.log`**即可启动数据库： 

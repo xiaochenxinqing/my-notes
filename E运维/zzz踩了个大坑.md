@@ -10,9 +10,16 @@ docker 容器呢内 /etc/hosts文件不对 ， 会导致所有调用了  InetAdd
 
 
 
-
+# ####
 
 java执行shell     带* 的命令会不识别  需要用 /bin/bash  -c
 
+# ####
 
+有时候同一个.service文件在不同的操作系统上可能无法启动，尝试关闭selinux看看是否正常
+
+```
+setenforce 0 
+sed -i "s|SELINUX=.*|SELINUX=disabled|" /etc/selinux/config
+```
 
