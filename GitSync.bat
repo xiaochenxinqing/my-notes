@@ -1,6 +1,6 @@
 @echo off
-
-echo  å¼€å§‹åŒæ­¥......
+chcp 936 >nul
+echo  ¿ªÊ¼Í¬²½......
 
 git add -A
 
@@ -10,6 +10,6 @@ git  pull
 
 git push
 
-echo  åŒæ­¥å®Œæˆï¼å³å°†é€€å‡º...
+echo  Í¬²½Íê³É£¡¼´½«ÍË³ö...
 timeout /t 3
 exit /b 0
