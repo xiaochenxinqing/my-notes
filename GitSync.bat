@@ -1,7 +1,7 @@
 @echo off
 chcp 936 >nul
 echo  开始同步......
-cd %~dp0
+
 git add -A
 
 git commit -m "save" 
