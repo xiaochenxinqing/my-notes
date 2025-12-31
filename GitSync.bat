@@ -1,5 +1,5 @@
 @echo off
-chcp 936 >nul
+
 echo  开始同步......
 
 git add -A
