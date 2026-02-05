@@ -1,4 +1,4 @@
-# github-recovery-codes.txt
+# github-recovery-codes
 
 32473-c2064
 
