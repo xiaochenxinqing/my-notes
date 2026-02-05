@@ -1,0 +1,37 @@
+
+
+
+*.bat  text eol=crlf
+*.sh text eol=lf
+
+
+
+
+
+# 1、text=auto：
+# 采用git认为最好的方式来处理文件，未在.gitattributes中设置的项默认按照这种方式处理。
+# git发现是文本文件,那么在checkin的时候，会将文件结尾符转换为LF。
+# 如果文件已经被已CRLF的形式提交（就是说已经在Gti仓库中的文件，如果结束符是CRLF，不会有任何的转换），不会有任何转换。
+#
+# 2、-text
+# 表示让git在checkin以及checkout的时候，对end-of-line不做任何转换。
+#
+# 3、text
+# 表示在checkin的时候会被转换为LF（在repository中的文件结束符是LF），
+# 如果需要控制在checkout的时候的换行符，需要结合eol进行设置（也就是控制working tree中的文件的结尾符，需要通过eol设置）。
+#
+# 4、text=auto和text的区别
+# text=auto由git来确定是不是文本文件，从而进行转换；
+# 而text表示，你确定这个path就是文本文件，会直接对这个path进行转换，而不是有git来决定是否转换。
+#
+# 5、没有指定text
+# git会使用全局配置中的core.autocrlf来进行eol的转换。core.autocrlf需要自己在自己的电脑上进行配置。
+#
+# 6、eol=crlf
+# 对左边匹配的文件统一使用CRLF换行符格式，如果有文件中出现LF将会转换成CRLF#也就是说，在checkin和checkout的时候，文件中都是CRLF，LF会被转换为CRLF。
+#
+# 7、eol=lf
+# 对左边匹配的文件统一使用LF换行符格式，如果有文件中出现CRLF将会转换成LF#也就是说，在checkin和checkout的时候，文件中都是LF，CRLF会被转换为LF。
+#
+# 8、binary
+# 告诉git该文件为二进制，防止git修改该文件。git不会对对其中的换行符进行改变。
