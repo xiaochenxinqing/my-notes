@@ -36,22 +36,55 @@ vncserver :1   （开放5901端口， 0就是5900端口）
 
 
 
-
-
-
-
 三、打开tigerVNC软件（vncviewer） 连接 ip:5900 即可。
 
-四、直接连管理软件（mobaxterm）
+
+
+
+
+四、mobaxterm直接连管理软件
+
+export DISPLAY=192.168.18.81:0.0
+virt-manager
+
+五、vnc连接主机：
+
+直接vncviewer 连接， 端口是5904  密码是 Fisec@12
+
+
+
+--------------远程启动主机的--------------
 
 export DISPLAY=192.168.18.81:0.0
 virt-manager
 
 
 
-
-
 =========================================
+
+
+
+
+
+# 启动虚拟机
+virsh start <虚拟机名>
+
+# 正常关机（需要安装 ACPI 服务）
+virsh shutdown <虚拟机名>
+
+# 强制关机
+virsh destroy <虚拟机名>
+
+# 重启虚拟机
+virsh reboot <虚拟机名>
+
+
+
+
+
+
+
+
 
 
 
