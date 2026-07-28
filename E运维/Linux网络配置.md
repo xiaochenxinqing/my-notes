@@ -197,3 +197,23 @@ route PRINT -4查看 新连接带来的默认路由优先级更高，所有内�
 route add 192.188.1.0 mask 255.255.255.0 192.168.18.1 metric 5 -p
 
 route add 192.188.4.0 mask 255.255.255.0 192.168.18.1 metric 5 -p
+
+
+
+
+
+##### 为社么用nmcli 命令添加 ipv4.gateway 会产生一条默认路由
+
+
+
+
+
+**因为 `ipv4.gateway` 在 NetworkManager 的设计语义中，就是指“默认网关”。**
+
+只要设置了这个值，NetworkManager 就会自动帮你生成一条指向 `0.0.0.0/0` 的默认路由。这是它的核心功能之一，而不是 bug。
+
+这时候 nmcli show 连接名， 是看不到ipv4.routes的， 所以最好还是配置modify  ipv4.routes 来操作
+
+———————
+
+tips：如果配 ipv4.routes 会在 /etc/sysconfig/network-scripts/  额外成生成route-连接名这样的文件
