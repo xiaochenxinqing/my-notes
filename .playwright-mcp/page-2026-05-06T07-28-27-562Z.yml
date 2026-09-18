@@ -1,0 +1,163 @@
+- generic [ref=e4]:
+  - generic:
+    - generic [ref=e7]:
+      - link "新闻" [ref=e8] [cursor=pointer]:
+        - /url: http://news.baidu.com
+      - link "hao123" [ref=e9] [cursor=pointer]:
+        - /url: https://www.hao123.com?src=from_pc_logon
+      - link "地图" [ref=e10] [cursor=pointer]:
+        - /url: http://map.baidu.com
+      - link "贴吧" [ref=e11] [cursor=pointer]:
+        - /url: http://tieba.baidu.com/
+      - link "视频" [ref=e12] [cursor=pointer]:
+        - /url: https://haokan.baidu.com/?sfrom=baidu-top
+      - link "图片" [ref=e13] [cursor=pointer]:
+        - /url: http://image.baidu.com/
+      - link "网盘" [ref=e14] [cursor=pointer]:
+        - /url: https://pan.baidu.com?from=1026962h
+      - link "文库" [ref=e15] [cursor=pointer]:
+        - /url: https://wenku.baidu.com/?fr=bdpcindex
+      - link "文心" [ref=e16] [cursor=pointer]:
+        - /url: https://chat.baidu.com/search?isShowHello=1&pd=csaitab&setype=csaitab&extParamsJson=%7B%22enter_type%22%3A%22home_tab%22%7D
+      - link "搭子DuMate" [ref=e17] [cursor=pointer]:
+        - /url: https://cloud.baidu.com/product/dumate.html?track=bdsy
+      - link "更多" [ref=e19] [cursor=pointer]:
+        - /url: http://www.baidu.com/more/
+    - generic [ref=e20]:
+      - generic [ref=e23]:
+        - link "乳山 20°" [ref=e24] [cursor=pointer]:
+          - /url: //www.baidu.com/s?tn=baidutop10&rsv_idx=2&wd=威海天气预报
+          - generic [ref=e25]:
+            - generic [ref=e26]: 乳山
+            - generic [ref=e27]:
+              - text: 20°
+              - img [ref=e28]
+        - generic [ref=e31]: 优
+      - generic [ref=e36] [cursor=pointer]: 通知
+      - generic [ref=e37] [cursor=pointer]: 设置
+      - link "饿着肚子看海" [ref=e38] [cursor=pointer]:
+        - /url: https://www.baidu.com/my/index
+        - img [ref=e40]
+        - generic [ref=e41]: 饿着肚子看海
+  - generic [ref=e42]:
+    - generic [ref=e44]:
+      - generic [ref=e45]:
+        - img [ref=e46]
+        - generic:
+          - link "点击一下，了解更多":
+            - /url: //www.baidu.com/s?wd=%E7%99%BE%E5%BA%A6%E7%83%AD%E6%90%9C&sa=ire_dl_gh_logo_texing&rsv_dl=igh_logo_pc
+      - generic [ref=e51]:
+        - generic [ref=e54]:
+          - textbox [active] [ref=e56]
+          - generic [ref=e58]:
+            - generic [ref=e59]:
+              - img [ref=e67] [cursor=pointer]
+              - generic [ref=e70]:
+                - img [ref=e74] [cursor=pointer]
+                - img [ref=e79] [cursor=pointer]
+            - button "百度一下" [ref=e83] [cursor=pointer]
+        - link "复杂问题就找文心助手，深入思考回答更优 " [ref=e87] [cursor=pointer]:
+          - /url: https://chat.baidu.com/search?extParams=%7B%22enter_type%22%3A%22home_operate%22%7D&isShowHello=1
+          - img [ref=e88]
+          - generic [ref=e89]:
+            - generic [ref=e90]: 复杂问题就找文心助手，深入思考回答更优
+            - generic [ref=e91]: 
+    - paragraph
+  - generic [ref=e95]:
+    - generic [ref=e101] [cursor=pointer]: 常用应用
+    - generic [ref=e105]:
+      - generic [ref=e106]:
+        - link "百度热搜" [ref=e107] [cursor=pointer]:
+          - /url: https://top.baidu.com/board?platform=pc&sa=pcindex_entry
+          - generic "百度热搜" [ref=e108]: 
+        - generic [ref=e109] [cursor=pointer]:
+          - generic [ref=e110]: 
+          - text: 换一换
+      - list:
+        - listitem [ref=e111]:
+          - link " 奋斗是青春最亮丽的底色" [ref=e112] [cursor=pointer]:
+            - /url: https://www.baidu.com/s?wd=%E5%A5%8B%E6%96%97%E6%98%AF%E9%9D%92%E6%98%A5%E6%9C%80%E4%BA%AE%E4%B8%BD%E7%9A%84%E5%BA%95%E8%89%B2&sa=fyb_n_homepage&rsv_dl=fyb_n_homepage&from=super&cl=3&tn=baidutop10&fr=top1000&rsv_idx=2&hisfilter=1
+            - generic [ref=e113]: 
+            - text: 奋斗是青春最亮丽的底色
+        - listitem [ref=e115]:
+          - link "5 演唱会外给人化妆13天暴赚3万" [ref=e116] [cursor=pointer]:
+            - /url: https://www.baidu.com/s?wd=%E6%BC%94%E5%94%B1%E4%BC%9A%E5%A4%96%E7%BB%99%E4%BA%BA%E5%8C%96%E5%A6%8613%E5%A4%A9%E6%9A%B4%E8%B5%9A3%E4%B8%87&sa=fyb_n_homepage&rsv_dl=fyb_n_homepage&from=super&cl=3&tn=baidutop10&fr=top1000&rsv_idx=2&hisfilter=1
+            - generic [ref=e117]: "5"
+            - text: 演唱会外给人化妆13天暴赚3万
+          - generic [ref=e118]: 新
+        - listitem [ref=e119]:
+          - link "1 男子买高铁票后无法上车 平台回应" [ref=e120] [cursor=pointer]:
+            - /url: https://www.baidu.com/s?wd=%E7%94%B7%E5%AD%90%E4%B9%B0%E9%AB%98%E9%93%81%E7%A5%A8%E5%90%8E%E6%97%A0%E6%B3%95%E4%B8%8A%E8%BD%A6+%E5%B9%B3%E5%8F%B0%E5%9B%9E%E5%BA%94&sa=fyb_n_homepage&rsv_dl=fyb_n_homepage&from=super&cl=3&tn=baidutop10&fr=top1000&rsv_idx=2&hisfilter=1
+            - generic [ref=e121]: "1"
+            - text: 男子买高铁票后无法上车 平台回应
+          - generic [ref=e122]: 热
+        - listitem [ref=e123]:
+          - link "6 涉网企业未办网络安全备案后果严重" [ref=e124] [cursor=pointer]:
+            - /url: https://www.baidu.com/s?wd=%E6%B6%89%E7%BD%91%E4%BC%81%E4%B8%9A%E6%9C%AA%E5%8A%9E%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%A4%87%E6%A1%88%E5%90%8E%E6%9E%9C%E4%B8%A5%E9%87%8D&sa=fyb_n_homepage&rsv_dl=fyb_n_homepage&from=super&cl=3&tn=baidutop10&fr=top1000&rsv_idx=2&hisfilter=1
+            - generic [ref=e125]: "6"
+            - text: 涉网企业未办网络安全备案后果严重
+        - listitem [ref=e127]:
+          - link "2 伊朗外长身穿休闲装抵达北京" [ref=e128] [cursor=pointer]:
+            - /url: https://www.baidu.com/s?wd=%E4%BC%8A%E6%9C%97%E5%A4%96%E9%95%BF%E8%BA%AB%E7%A9%BF%E4%BC%91%E9%97%B2%E8%A3%85%E6%8A%B5%E8%BE%BE%E5%8C%97%E4%BA%AC&sa=fyb_n_homepage&rsv_dl=fyb_n_homepage&from=super&cl=3&tn=baidutop10&fr=top1000&rsv_idx=2&hisfilter=1
+            - generic [ref=e129]: "2"
+            - text: 伊朗外长身穿休闲装抵达北京
+          - generic [ref=e130]: 热
+        - listitem [ref=e131]:
+          - link "7 金建希二审法官遗书内容曝光" [ref=e132] [cursor=pointer]:
+            - /url: https://www.baidu.com/s?wd=%E9%87%91%E5%BB%BA%E5%B8%8C%E4%BA%8C%E5%AE%A1%E6%B3%95%E5%AE%98%E9%81%97%E4%B9%A6%E5%86%85%E5%AE%B9%E6%9B%9D%E5%85%89&sa=fyb_n_homepage&rsv_dl=fyb_n_homepage&from=super&cl=3&tn=baidutop10&fr=top1000&rsv_idx=2&hisfilter=1
+            - generic [ref=e133]: "7"
+            - text: 金建希二审法官遗书内容曝光
+          - generic [ref=e134]: 热
+        - listitem [ref=e135]:
+          - link "3 这个“五一”各地文旅实力“宠客”" [ref=e136] [cursor=pointer]:
+            - /url: https://www.baidu.com/s?wd=%E8%BF%99%E4%B8%AA%E2%80%9C%E4%BA%94%E4%B8%80%E2%80%9D%E5%90%84%E5%9C%B0%E6%96%87%E6%97%85%E5%AE%9E%E5%8A%9B%E2%80%9C%E5%AE%A0%E5%AE%A2%E2%80%9D&sa=fyb_n_homepage&rsv_dl=fyb_n_homepage&from=super&cl=3&tn=baidutop10&fr=top1000&rsv_idx=2&hisfilter=1
+            - generic [ref=e137]: "3"
+            - text: 这个“五一”各地文旅实力“宠客”
+        - listitem [ref=e139]:
+          - link "8 日本战后首次在境外发射进攻型导弹" [ref=e140] [cursor=pointer]:
+            - /url: https://www.baidu.com/s?wd=%E6%97%A5%E6%9C%AC%E6%88%98%E5%90%8E%E9%A6%96%E6%AC%A1%E5%9C%A8%E5%A2%83%E5%A4%96%E5%8F%91%E5%B0%84%E8%BF%9B%E6%94%BB%E5%9E%8B%E5%AF%BC%E5%BC%B9&sa=fyb_n_homepage&rsv_dl=fyb_n_homepage&from=super&cl=3&tn=baidutop10&fr=top1000&rsv_idx=2&hisfilter=1
+            - generic [ref=e141]: "8"
+            - text: 日本战后首次在境外发射进攻型导弹
+          - generic [ref=e142]: 热
+        - listitem [ref=e143]:
+          - link "4 女游客体验悬崖秋千坠亡 家属已和解" [ref=e144] [cursor=pointer]:
+            - /url: https://www.baidu.com/s?wd=%E5%A5%B3%E6%B8%B8%E5%AE%A2%E4%BD%93%E9%AA%8C%E6%82%AC%E5%B4%96%E7%A7%8B%E5%8D%83%E5%9D%A0%E4%BA%A1+%E5%AE%B6%E5%B1%9E%E5%B7%B2%E5%92%8C%E8%A7%A3&sa=fyb_n_homepage&rsv_dl=fyb_n_homepage&from=super&cl=3&tn=baidutop10&fr=top1000&rsv_idx=2&hisfilter=1
+            - generic [ref=e145]: "4"
+            - text: 女游客体验悬崖秋千坠亡 家属已和解
+          - generic [ref=e146]: 新
+        - listitem [ref=e147]:
+          - link "9 长期食用冰箱存货 病菌可能“上脑”" [ref=e148] [cursor=pointer]:
+            - /url: https://www.baidu.com/s?wd=%E9%95%BF%E6%9C%9F%E9%A3%9F%E7%94%A8%E5%86%B0%E7%AE%B1%E5%AD%98%E8%B4%A7+%E7%97%85%E8%8F%8C%E5%8F%AF%E8%83%BD%E2%80%9C%E4%B8%8A%E8%84%91%E2%80%9D&sa=fyb_n_homepage&rsv_dl=fyb_n_homepage&from=super&cl=3&tn=baidutop10&fr=top1000&rsv_idx=2&hisfilter=1
+            - generic [ref=e149]: "9"
+            - text: 长期食用冰箱存货 病菌可能“上脑”
+    - img [ref=e158] [cursor=pointer]
+  - generic [ref=e160]:
+    - paragraph [ref=e161]:
+      - link "关于百度" [ref=e162] [cursor=pointer]:
+        - /url: //home.baidu.com
+    - paragraph [ref=e163]:
+      - link "About Baidu" [ref=e164] [cursor=pointer]:
+        - /url: http://ir.baidu.com
+    - paragraph [ref=e165]:
+      - link "使用百度前必读" [ref=e166] [cursor=pointer]:
+        - /url: //www.baidu.com/duty
+    - paragraph [ref=e167]:
+      - link "帮助中心" [ref=e168] [cursor=pointer]:
+        - /url: https://help.baidu.com/question?prod_id=1
+    - paragraph [ref=e169]:
+      - link "企业推广" [ref=e170] [cursor=pointer]:
+        - /url: https://e.baidu.com/?refer=1271
+    - paragraph [ref=e171]:
+      - link "京公网安备11000002000001号" [ref=e172] [cursor=pointer]:
+        - /url: http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11000002000001
+    - paragraph [ref=e173]:
+      - link "京ICP证030173号" [ref=e174] [cursor=pointer]:
+        - /url: https://beian.miit.gov.cn
+    - paragraph [ref=e175]: 互联网新闻信息服务许可证11220180008
+    - paragraph [ref=e176]: 网络文化经营许可证： 京网文〔2023〕1034-029号
+    - paragraph [ref=e177]:
+      - link "信息网络传播视听节目许可证 0110516" [ref=e178] [cursor=pointer]:
+        - /url: //www.baidu.com/licence/
+    - paragraph [ref=e179]: 互联网宗教信息服务许可证编号：京（2022）0000043
+    - generic [ref=e180]: 
+    - generic [ref=e181]: 
