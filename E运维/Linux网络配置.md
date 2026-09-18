@@ -197,3 +197,49 @@ route PRINT -4查看 新连接带来的默认路由优先级更高，所有内�
 route add 192.188.1.0 mask 255.255.255.0 192.168.18.1 metric 5 -p
 
 route add 192.188.4.0 mask 255.255.255.0 192.168.18.1 metric 5 -p
+
+
+
+
+
+##### 为社么用nmcli 命令添加 ipv4.gateway 会产生一条默认路由
+
+
+
+
+
+**因为 `ipv4.gateway` 在 NetworkManager 的设计语义中，就是指“默认网关”。**
+
+只要设置了这个值，NetworkManager 就会自动帮你生成一条指向 `0.0.0.0/0` 的默认路由。这是它的核心功能之一，而不是 bug。
+
+这时候 nmcli show 连接名， 是看不到ipv4.routes的， 所以最好还是配置modify  ipv4.routes 来操作
+
+———————
+
+tips：如果配 ipv4.routes 会在 /etc/sysconfig/network-scripts/  额外成生成route-连接名这样的文件
+
+
+
+**总结：**
+
+   1）配置ip.address（等价于在ifcfg-xxx文件中配置IPADDR 和PREFIX） （192.188.1.68/24 ）   、
+
+   2）配置ipv4.gateway（等价于在ifcfg-xxx文件中配置GATEWAY） 、    
+
+   3）配置ipv4.routes（等价于route-xx文件中配置路由）, 
+
+上述这三种行为都会产生路由，  其中配置ip会产生直接路由（U）， 后两种产生间接路由（UG）
+
+一般建议用ip地址+ ipv4.routes 来配置
+
+
+
+**注意：**
+
+如果你想通过 **`nmcli` 命令**来配置 `ipv4.routes`，那么它**主要只支持带网关（`UG`）的路由**，对仅设备（`U`）的路由支持不足，不建议使用。”
+
+ip route add 它可以产生两种路由：
+
+- 如果写成 ip route ad`10.10.2.0/24 via 192.168.1.1` → 产生 **`UG`**（间接）。
+- 如果写成 ip route ad  `10.10.2.0/24 dev eth0` → 产生 **`U`**（直接，无网关）。
+  所以，它产生什么路由，取决于你配不配 `via` 网关。
